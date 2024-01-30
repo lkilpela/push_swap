@@ -50,6 +50,7 @@ This project was completed as a **solo project**. It provided an opportunity to 
 
 - Run the program with the following syntax: `./push_swap [list of integers]`
 - For example, you could run: `./push_swap 3 2 1 6 5 8`
+
 This will sort the numbers and display the operations used to sort them.
 
 ## 📝 Evaluation Requirements
