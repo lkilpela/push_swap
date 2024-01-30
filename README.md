@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-	<b><i>Data Sorting Using Two Stacks in C"</i></b><br>
+	<b><i>Data Sorting Using Two Stacks in C.</i></b><br>
 </p>
 
 <p align="center">
