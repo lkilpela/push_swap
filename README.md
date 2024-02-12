@@ -52,9 +52,8 @@ This project was completed as a **solo project**. It provided an opportunity to 
 
 - The program takes as an argument a stack of integers (duplicates not allowed).
 - The program outputs a list of operations that sort the stack, each operation followed by a newline.
-- The checker program takes as an argument the same stack of integers and reads instructions on the standard output. Once read, checker executes them and displays OK if integers are sorted. Otherwise, it will display KO.
+- The checker program takes as an argument the same stack of integers and reads instructions on the standard output. Once read, checker executes them and displays `OK` if integers are sorted. Otherwise, it will display `KO`.
 
-### How to Use
 ```
 # To compile
 make
