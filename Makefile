@@ -14,24 +14,24 @@ libft:
 	@make -C $(LIBFT)
 
 %.o : %.c
-	@echo "\033[32m[pipex] Compiling $< into $@\033[0m"
+	@echo "\033[32m[push_swap] Compiling $< into $@\033[0m"
 	@$(CC) $(CCFLAGS) -o $@ -c $< $(HDRS)
 
 $(NAME): $(OBJS)
 	@$(CC) $(OBJS) $(LIBS) $(HDRS) -o $(NAME) -fsanitize=address
-	@echo "[pipex] Built target pipex"
+	@echo "[push_swap] Built target pipex"
 
 clean:
 	@rm -rf $(OBJS)
 	@make clean -C $(LIBFT)
-	@echo "[pipex] Object files cleaned."
+	@echo "[push_swap] Object files cleaned."
 
 fclean: clean
 	@rm -rf $(NAME)
 	@rm -rf $(LIBFT)/build
-	@echo "[pipex] Everything deleted."
+	@echo "[push_swap] Everything deleted."
 
 re: fclean all
-	@echo "[pipex] Everything rebuilt."
+	@echo "[push_swap] Everything rebuilt."
 
 .PHONY: all clean fclean re libft
