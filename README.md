@@ -29,9 +29,10 @@ This project was completed as a **solo project**. It provided an opportunity to 
 
 ### ⭐ Features
 
-- Sorts a stack of integers using a second stack and a limited set of operations.
-- Outputs the operations used to sort the list.
-- Handles errors and provides appropriate error messages.
+- Efficient sorting of a stack of integers
+- Limited set of operations: `sa`, `sb`, `ss`, `pa`, `pb`, `ra`, `rb`, `rr`, `rra`, `rrb`, `rrr`
+- Visualizer to see the sorting in action
+- Checker program to verify the correctness of the sort
 
 ## 🏁 Getting Started
 
@@ -46,12 +47,26 @@ This project was completed as a **solo project**. It provided an opportunity to 
 2. Navigate into the project directory: `cd push_swap`
 3. Compile the project: `make`
 
-### 🕹️ How to Use
 
-- Run the program with the following syntax: `./push_swap [list of integers]`
-- For example, you could run: `./push_swap 3 2 1 6 5 8`
+### 🕹️ How it works
+
+- The program takes as an argument a stack of integers (duplicates not allowed).
+- The program outputs a list of operations that sort the stack, each operation followed by a newline.
+- The checker program takes as an argument the same stack of integers and reads instructions on the standard output. Once read, checker executes them and displays OK if integers are sorted. Otherwise, it will display KO.
+
+### How to Use
+```
+# To compile
+make
+
+# To run push_swap
+./push_swap 3 2 1 6 5 8
+
+# To run checker
+./checker 3 2 1 6 5 8
 
 This will sort the numbers and display the operations used to sort them.
+```
 
 ## 📝 Evaluation Requirements
 
