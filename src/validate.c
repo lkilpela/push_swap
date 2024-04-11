@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:02:10 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/11 15:44:29 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/11 15:49:59 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	validate_argument(t_push_swap *ps)
 			is_duplicate(ps);
 			if (!check_alpha(ps->argv[i]))
 				error(ERR_FORMAT);
-			if (check.valid)
+			if (!check.valid)
 				error(ERR_INT_OVERFLOW);
 			i++;
 		}
