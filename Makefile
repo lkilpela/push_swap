@@ -19,7 +19,7 @@ libft:
 
 $(NAME): $(OBJS)
 	@$(CC) $(OBJS) $(LIBS) $(HDRS) -o $(NAME) -fsanitize=address
-	@echo "[push_swap] Built target pipex"
+	@echo "[push_swap] Built target push_swap"
 
 clean:
 	@rm -rf $(OBJS)
