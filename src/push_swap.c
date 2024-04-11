@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 14:57:54 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/11 08:32:29 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/11 08:56:21 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 int main(int argc, char **argv)
 {
-    t_stack_node    *a;
-    t_stack_node    *b;
-    
-    a = NULL;
-    b = NULL;
+	t_stack_node	*a;
+	t_stack_node	*b;
 
-    
+	a = NULL;
+	b = NULL;
+
+	if (argc == 1 || (argc == 2 && !argv[1][0]))
+		return (1);
 }
