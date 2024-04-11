@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:02:10 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/11 16:08:39 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/11 16:08:57 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static int	is_valid_int(const char *str)
 			return (0);
 		str++;
 	}
-	return (0);
+	return (1);
 }
 
 void	validate_argument(t_push_swap *ps)
