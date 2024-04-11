@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/11 12:48:41 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/11 13:44:05 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <limits.h> // INT_MIN, INT_MAX
 #include <unistd.h> // read, write
 #include <stdlib.h> // malloc, free, exit
+#include <stdio.h>
 
 
 enum	e_error

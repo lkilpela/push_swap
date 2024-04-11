@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:02:10 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/11 13:42:35 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/11 13:53:17 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,15 @@ static void	invalid_arg(t_push_swap *ps)
 	int	i;
 	int nbr;
 
-	i = 0;
+	i = 1;
 	while (i < ps->argc)
 	{
-		printf("ps->argv[i]: %s\n", ps->argv[i]);
+		nbr = ft_atoi(ps->argv[i]);
+		printf("ps->argc: %d\n", ps->argc);
+		for (int j = 0; j < ps->argc; j++)
+			printf("ps->argv[i]: %s\n", ps->argv[j]);
 		if (ps->argv[1][0] == '\0')
 			error(ERR_EMPTY_ARG);
-		nbr = ft_atoi(ps->argv[i]);
 		if (nbr < INT_MIN || nbr > INT_MAX)
 			error(ERR_INT_OVERFLOW);
 		if (arg_has_alpha(ps->argv[i]))
