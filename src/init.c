@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/27 14:57:54 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/11 11:36:34 by lkilpela         ###   ########.fr       */
+/*   Created: 2024/04/11 11:34:59 by lkilpela          #+#    #+#             */
+/*   Updated: 2024/04/11 11:36:22 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	init()
-
-int main(int argc, char **argv)
+void    init_push_swap(int argc, char **argv, t_push_swap *ps)
 {
-	t_stack_node	*a;
-	t_stack_node	*b;
-	t_push_swap		ps;
-
-	a = NULL;
-	b = NULL;
-	validate_argument(&ps);
+    ps->argc = argc;
+    ps->argv = argv;
 }
