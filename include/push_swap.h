@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/11 14:21:19 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/11 14:57:43 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,8 @@ void    init_push_swap(int argc, char **argv, t_push_swap *ps);
 //Commands
 
 //Algorithms
+
+//Utils
+t_atoi	check_atoi_overflow(const char *str);
 
 # endif
