@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 14:57:54 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/11 09:22:35 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/11 09:25:38 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,4 @@ int main(int argc, char **argv)
 
 	a = NULL;
 	b = NULL;
-
-	if (argc == 1 || (argc == 2 && !argv[1][0]))
-		return (1);
 }
