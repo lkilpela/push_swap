@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:02:10 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/11 15:16:24 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/11 15:22:32 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,16 +37,13 @@ static void	is_duplicate(t_push_swap *ps)
 
 static int	arg_has_alpha(char *str)
 {
-	int	i;
-
-	i = 0;
-	if (*str == '-')
+	if (*str == '-' || *str == '+')
         str++;
-	while (str[i])
+	while (*str)
 	{
-		if (!ft_isalpha(str[i]))
+		if (!ft_isdigit(*str))
 			return (1);
-		i++;
+		str++;
 	}
 	return (0);
 }
@@ -66,7 +63,7 @@ void	validate_argument(t_push_swap *ps)
 		if (arg_has_alpha(ps->argv[i]))
 			error(ERR_FORMAT);
 		check = check_atoi_overflow(ps->argv[i]);
-		if (check.valid)
+		if (!check.valid)
 			error(ERR_INT_OVERFLOW);
 		i++;
 	}
