@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:02:10 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/11 15:49:59 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/11 16:08:14 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,17 +36,17 @@ static void	is_duplicate(t_push_swap *ps)
 }
 /* returns 1, the string contains an alphabetic character. 
 returns 0, the string does not contain any alphabetic characters.*/
-static int	check_alpha(char *str)
+static int	is_valid_int(const char *str)
 {
 	if (*str == '-' || *str == '+')
         str++;
 	while (*str)
 	{
-		if (ft_isalpha(*str))
-			return (1);
+		if (!ft_isdigit(*str))
+			return (0);
 		str++;
 	}
-	return (0);
+	return (1);
 }
 
 void	validate_argument(t_push_swap *ps)
@@ -59,13 +59,13 @@ void	validate_argument(t_push_swap *ps)
 	{
 		while (i < ps->argc)
 		{
-			check = check_atoi_overflow(ps->argv[i]);
 			if (ps->argv[1][0] == '\0')
 				error(ERR_EMPTY_ARG);
 			is_duplicate(ps);
-			if (!check_alpha(ps->argv[i]))
+			if (!is_valid_int(ps->argv[i]))
 				error(ERR_FORMAT);
-			if (!check.valid)
+			check = check_atoi_overflow(ps->argv[i]);
+			if (check.valid)
 				error(ERR_INT_OVERFLOW);
 			i++;
 		}
