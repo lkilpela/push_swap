@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:01:14 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/11 09:19:52 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/11 09:22:02 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,10 @@ static const char   *get_error_messages(int e)
         "Error\nInvalid argument format or integer overflow.",
         "Error\nEmpty argument.",
         "Error\nDuplicate values.",
-    }
+        "last error"
+    };
+    
+    return (error_messages[e]);
 }
 
-	ERR_NOT_ENOUGH_ARG,
-	
-	ERR_INVALID_ARG,
-	ERR_EMPTY_ARG,
-	ERR_DUPLICATE
+
