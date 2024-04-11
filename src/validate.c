@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:02:10 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/11 16:08:57 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/11 16:17:22 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,17 +36,19 @@ static void	is_duplicate(t_push_swap *ps)
 }
 /* returns 1, the string contains an alphabetic character. 
 returns 0, the string does not contain any alphabetic characters.*/
-static int	is_valid_int(const char *str)
+static int	is_not_int(const char *str)
 {
+	while (ft_isspace(*str))
+        str++;
 	if (*str == '-' || *str == '+')
         str++;
 	while (*str)
 	{
-		if (ft_isdigit(*str))
-			return (0);
+		if (!ft_isdigit(*str))
+			return (1);
 		str++;
 	}
-	return (1);
+	return (0);
 }
 
 void	validate_argument(t_push_swap *ps)
@@ -62,7 +64,7 @@ void	validate_argument(t_push_swap *ps)
 			if (ps->argv[1][0] == '\0')
 				error(ERR_EMPTY_ARG);
 			is_duplicate(ps);
-			if (!is_valid_int(ps->argv[i]))
+			if (is_not_int(ps->argv[i]))
 				error(ERR_FORMAT);
 			check = check_atoi_overflow(ps->argv[i]);
 			if (check.valid)
