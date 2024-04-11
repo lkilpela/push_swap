@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/11 08:50:26 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/11 09:04:32 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 #include <limits.h>
 #include <stdlib.h>
 #include "./lib/libft/include/libft.h"
+
+enum	e_error
+{
+	ERR_NONE,
+	ERR_ARG
+};
 
 typedef struct	s_stack_node
 {
