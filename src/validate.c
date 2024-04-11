@@ -6,13 +6,13 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:02:10 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/11 11:25:01 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/11 11:27:11 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	is_duplicate(t_push_swap *ps)
+static void	is_duplicate(t_push_swap *ps)
 {
 	int	flg;
 	int	i;
@@ -35,7 +35,7 @@ void	is_duplicate(t_push_swap *ps)
 		error(ERR_DUPLICATE);
 }
 
-int	arg_has_alpha(char *str)
+static int	arg_has_alpha(char *str)
 {
 	int	i;
 
@@ -48,7 +48,7 @@ int	arg_has_alpha(char *str)
 	}
 	return (1);
 }
-void	invalid_arg(t_push_swap *ps)
+static void	invalid_arg(t_push_swap *ps)
 {
 	int	i;
 	int nbr;
