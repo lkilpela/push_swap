@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:02:10 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/11 10:50:49 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/11 11:05:38 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,9 @@ void	invalid_arg(t_push_swap *ps)
 	{
 		if (ps->argv[1][0] == '\0')
 			error(ERR_EMPTY_ARG);
+		if (ps->argv[i] < INT_MIN || ps->argv[i] > INT_MAX)
+			error(ERR_INVALID_ARG);
+		
 		
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/11 11:03:27 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/11 11:09:33 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ enum	e_error
 {
 	ERR_NONE,
 	ERR_NOT_ENOUGH_ARG,
-	ERR_INVALID_ARG,
+	ERR_INT_OVERFLOW,
+	ERR_FORMAT,
 	ERR_EMPTY_ARG,
 	ERR_DUPLICATE,
 	LAST_ERROR
