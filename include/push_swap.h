@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/11 09:22:22 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/11 09:28:52 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,12 @@ enum	e_error
 	ERR_DUPLICATE,
 	LAST_ERROR
 };
+
+typedef struct s_push_swap
+{
+	char	**argv;
+	int		argc;
+}			t_push_swap;
 
 typedef struct	s_stack_node
 {
