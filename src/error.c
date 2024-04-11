@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:01:14 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/11 15:05:01 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/11 15:07:06 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,7 @@ static const char	*get_error_messages(int e)
 	return (error_messages[e]);
 }
 
-void	error_args(int e, const char *str)
-{
-	print_error(e, str);
-	exit(EXIT_FAILURE);
-}
-
-void	print_error(int e, const char *str)
+void	error(int e, const char *str)
 {
 	const char	*message;
 
@@ -42,13 +36,8 @@ void	print_error(int e, const char *str)
 		message = get_error_messages(e);
 		ft_putstr_fd("Error\n", STDERR_FILENO);
 		ft_putstr_fd(message, STDERR_FILENO);
-		if (str)
-		{
-			ft_putstr_fd(": ", STDERR_FILENO);
-			ft_putstr_fd(str, STDERR_FILENO);
-		}
 	}
 	else
 		ft_putstr_fd ("Unknown error", STDERR_FILENO);
-	write(2, "\n", 1);
+	exit(EXIT_FAILURE);
 }
