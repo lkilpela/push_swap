@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:02:10 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/11 15:00:13 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/11 15:02:46 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,11 @@ static void	invalid_arg(t_push_swap *ps)
 	{
 		if (ps->argv[1][0] == '\0')
 			error(ERR_EMPTY_ARG);
+		if (arg_has_alpha(ps->argv[i]))
+			error(ERR_FORMAT);
 		check = check_atoi_overflow(ps->argv[i]);
 		if (check.valid)
 			error(ERR_INT_OVERFLOW);
-		if (arg_has_alpha(ps->argv[i]))
-			error(ERR_FORMAT);
 		i++;
 	}
 }
