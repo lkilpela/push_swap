@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/11 09:04:32 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/11 09:10:10 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,11 @@
 enum	e_error
 {
 	ERR_NONE,
-	ERR_ARG
+	ERR_NOT_ENOUGH_ARG,
+	ERR_NOT_INT,
+	ERR_INVALID_ARG,
+	ERR_EMPTY_ARG,
+	ERR_DUPLICATE
 };
 
 typedef struct	s_stack_node
