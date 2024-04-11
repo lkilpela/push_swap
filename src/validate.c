@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:02:10 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/11 15:02:46 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/11 15:14:50 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static int	arg_has_alpha(char *str)
 	}
 	return (0);
 }
-static void	invalid_arg(t_push_swap *ps)
+void	validate_argument(t_push_swap *ps)
 {
 	int		i;
 	t_atoi	check;
@@ -56,8 +56,11 @@ static void	invalid_arg(t_push_swap *ps)
 	i = 1;
 	while (i < ps->argc)
 	{
+		if (ps->argc < 2)
+			error(ERR_NOT_ENOUGH_ARG);
 		if (ps->argv[1][0] == '\0')
 			error(ERR_EMPTY_ARG);
+		is_duplicate(ps);
 		if (arg_has_alpha(ps->argv[i]))
 			error(ERR_FORMAT);
 		check = check_atoi_overflow(ps->argv[i]);
@@ -65,15 +68,4 @@ static void	invalid_arg(t_push_swap *ps)
 			error(ERR_INT_OVERFLOW);
 		i++;
 	}
-}
-
-void	validate_argument(t_push_swap *ps)
-{
-	if (ps->argc > 2)
-	{
-		invalid_arg(ps);
-		is_duplicate(ps);
-	}
-	else
-		error(ERR_NOT_ENOUGH_ARG);
 }
