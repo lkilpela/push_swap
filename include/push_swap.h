@@ -6,18 +6,20 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/11 12:34:28 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/11 12:48:41 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+#include "../lib/libft/include/libft.h"
+
 #include <stdbool.h>
 #include <limits.h> // INT_MIN, INT_MAX
 #include <unistd.h> // read, write
 #include <stdlib.h> // malloc, free, exit
-#include "./lib/libft/include/libft.h"
+
 
 enum	e_error
 {

@@ -1,11 +1,11 @@
 NAME = push_swap
 CCFLAGS = -Wall -Wextra -Werror -g -fsanitize=address
 
-LIBFT = ./lib/libft
+LIBFT = lib/libft
 
-HDRS = -I./include -I $(LIBFT)/include
+HDRS = -I./include -I$(LIBFT)/include/
 LIBS = $(LIBFT)/build/libft.a
-SRCS = src/
+SRCS = src/error.c src/init.c src/push_swap.c src/validate.c
 OBJS = $(SRCS:%.c=%.o)
 
 all: libft $(NAME)
