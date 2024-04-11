@@ -6,13 +6,11 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 14:57:54 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/11 11:36:34 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/11 11:38:39 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	init()
 
 int main(int argc, char **argv)
 {
@@ -22,5 +20,6 @@ int main(int argc, char **argv)
 
 	a = NULL;
 	b = NULL;
+	init_push_swap(argc, argv, &ps);
 	validate_argument(&ps);
 }
