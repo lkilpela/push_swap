@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:02:10 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/11 13:53:17 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/11 15:00:13 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,19 +50,16 @@ static int	arg_has_alpha(char *str)
 }
 static void	invalid_arg(t_push_swap *ps)
 {
-	int	i;
-	int nbr;
+	int		i;
+	t_atoi	check;
 
 	i = 1;
 	while (i < ps->argc)
 	{
-		nbr = ft_atoi(ps->argv[i]);
-		printf("ps->argc: %d\n", ps->argc);
-		for (int j = 0; j < ps->argc; j++)
-			printf("ps->argv[i]: %s\n", ps->argv[j]);
 		if (ps->argv[1][0] == '\0')
 			error(ERR_EMPTY_ARG);
-		if (nbr < INT_MIN || nbr > INT_MAX)
+		check = check_atoi_overflow(ps->argv[i]);
+		if (check.valid)
 			error(ERR_INT_OVERFLOW);
 		if (arg_has_alpha(ps->argv[i]))
 			error(ERR_FORMAT);
