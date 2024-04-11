@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/11 11:09:33 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/11 11:27:48 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ typedef struct	s_stack_node
 }				t_stack_node;
 
 //Handle errors
+void	validate_argument(t_push_swap *ps);
 
 //Stack initiation
 
