@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:02:10 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/11 10:09:19 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/11 10:50:49 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,15 @@ void	is_duplicate(t_push_swap *ps)
 
 void	invalid_arg(t_push_swap *ps)
 {
-	
+	int	i;
+
+	i = 0;
+	while (i < ps->argc)
+	{
+		if (ps->argv[1][0] == '\0')
+			error(ERR_EMPTY_ARG);
+		
+	}
 }
 
 void	validate_argument(t_push_swap *ps)
