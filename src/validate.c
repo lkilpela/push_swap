@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:02:10 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/11 15:14:50 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/11 15:16:24 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ static int	arg_has_alpha(char *str)
 	int	i;
 
 	i = 0;
+	if (*str == '-')
+        str++;
 	while (str[i])
 	{
 		if (!ft_isalpha(str[i]))
