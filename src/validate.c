@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:02:10 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/12 08:06:52 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/12 08:24:55 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,24 +51,39 @@ static int	is_not_int(const char *str)
 	return (0);// return 0 if all characters are digits (or the string is empty)
 }
 
-void	validate_string_argument(t_push_swap *ps)
+void	validate_single_argument(t_push_swap *ps)
 {
-	int		i;
 	t_atoi	check;
 
-	i = 1;
-	if (ps->argc > 2)
+	if (ps->arg[0] == '\0')
+		error(ERR_EMPTY_ARG);
+	if (is_not_int(ps->arg))
+		error(ERR_FORMAT);
+	check = check_atoi_overflow(ps->arg);
+	if (check.valid == 1)
+		error(ERR_INT_OVERFLOW);
+	is_duplicate(ps);
+}
+
+void	validate_argument(t_push_swap *ps)
+{
+	int		i;
+	int		j;
+	char	**tab;
+
+	if (ps->argc >= 2)
 	{
+		i = 1;
 		while (i < ps->argc)
 		{
-			if (ps->argv[i][0] == '\0')
-				error(ERR_EMPTY_ARG);
-			if (is_not_int(ps->argv[i]))
-				error(ERR_FORMAT);
-			check = check_atoi_overflow(ps->argv[i]);
-			if (check.valid == 1)
-				error(ERR_INT_OVERFLOW);
-			is_duplicate(ps);
+			tab = ft_split(ps->argv[1], ' ');
+			j = 0;
+			while (tab[j])
+			{
+				ps->arg = tab[j];
+				validate_single_argument(ps);
+				j++;
+			}
 			i++;
 		}
 	}
