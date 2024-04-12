@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:02:10 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/12 09:38:42 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/12 09:50:36 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,8 @@ void	validate_argument(t_push_swap *ps)
 		while (i < ps->argc)
 		{
 			tab = ft_split(ps->argv[1], ' ');
-			
+			if (!tab)
+				return (NULL);
 			j = 0;
 			while (tab[j])
 			{
@@ -87,6 +88,7 @@ void	validate_argument(t_push_swap *ps)
 				validate_single_argument(ps);
 				j++;
 			}
+			free_array_of_pointers(tab);
 			i++;
 		}
 	}
