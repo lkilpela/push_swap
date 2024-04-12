@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:02:10 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/12 07:24:22 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/12 08:06:52 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static int	is_not_int(const char *str)
 	return (0);// return 0 if all characters are digits (or the string is empty)
 }
 
-void	validate_argument(t_push_swap *ps)
+void	validate_string_argument(t_push_swap *ps)
 {
 	int		i;
 	t_atoi	check;
