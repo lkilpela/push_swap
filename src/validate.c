@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:02:10 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/12 07:01:19 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/12 07:24:22 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,10 @@ static int	is_not_int(const char *str)
 	while (*str)
 	{
 		if (!ft_isdigit(*str))
-			return (1);
+			return (1); // return 1 when a non-digit character is found
 		str++;
 	}
-	return (0);
+	return (0);// return 0 if all characters are digits (or the string is empty)
 }
 
 void	validate_argument(t_push_swap *ps)
@@ -61,14 +61,14 @@ void	validate_argument(t_push_swap *ps)
 	{
 		while (i < ps->argc)
 		{
-			if (ps->argv[1][0] == '\0')
+			if (ps->argv[i][0] == '\0')
 				error(ERR_EMPTY_ARG);
-			is_duplicate(ps);
 			if (is_not_int(ps->argv[i]))
 				error(ERR_FORMAT);
 			check = check_atoi_overflow(ps->argv[i]);
-			if (!check.valid)
+			if (check.valid == 1)
 				error(ERR_INT_OVERFLOW);
+			is_duplicate(ps);
 			i++;
 		}
 	}
