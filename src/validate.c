@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:02:10 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/12 09:50:36 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/12 09:51:13 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	validate_single_argument(t_push_swap *ps)
 	is_duplicate(ps);
 }
 
-void	validate_argument(t_push_swap *ps)
+int	validate_argument(t_push_swap *ps)
 {
 	int		i;
 	int		j;
@@ -94,4 +94,5 @@ void	validate_argument(t_push_swap *ps)
 	}
 	else
 		error(ERR_NOT_ENOUGH_ARG);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/12 09:46:41 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/12 12:07:20 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ typedef struct s_stack
 }				t_stack;
 
 //Handle errors
-void	validate_argument(t_push_swap *ps);
+int	validate_argument(t_push_swap *ps);
 void	error(int e);
 
 // argument initiation
@@ -86,6 +86,6 @@ void	init_stack(t_stack *a, t_stack *b);
 t_atoi	check_atoi_overflow(const char *str);
 
 //Handle memory
-void    free_array_of_pointers(char **array);
+void    free_ptrs(char **array);
 
 # endif
