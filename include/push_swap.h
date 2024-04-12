@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/12 09:35:45 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/12 09:46:41 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,8 @@ void	init_stack(t_stack *a, t_stack *b);
 
 //Utils
 t_atoi	check_atoi_overflow(const char *str);
+
+//Handle memory
+void    free_array_of_pointers(char **array);
 
 # endif
