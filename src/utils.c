@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 14:18:43 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/11 15:49:27 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/12 07:04:51 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ static int is_overflow(long long result, int sign, int digit)
 {
 	if ((sign == 1 && result > INT_MAX / 10 - digit)
 		|| (sign == -1 && result < INT_MIN / 10 + digit))
-		return (0);
-	return (1);
+		return (1);
+	return (0);
 }
 
 t_atoi	check_atoi_overflow(const char *str)

@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:02:10 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/11 16:17:22 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/12 07:01:19 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	validate_argument(t_push_swap *ps)
 			if (is_not_int(ps->argv[i]))
 				error(ERR_FORMAT);
 			check = check_atoi_overflow(ps->argv[i]);
-			if (check.valid)
+			if (!check.valid)
 				error(ERR_INT_OVERFLOW);
 			i++;
 		}
