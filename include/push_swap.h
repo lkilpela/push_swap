@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/11 14:57:43 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/12 07:51:20 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,20 @@ typedef struct	s_atoi
 	int	number;
 }				t_atoi;
 
+typedef struct s_stack
+{
+	t_stack_node	*top;// a pointer to the top node in the stack. This is used to easily add elements to and remove elements from the top of the stack.
+	int				size;//the number of elements in the stack. This is used to quickly check if the stack is empty (size is 0) or to get the number of elements in the stack.
+}				t_stack;
+
 typedef struct	s_stack_node
 {
-	int		nbr;
-	int		index;
-	int		pust_cost;
-	bool	above_median;
-	bool	cheapest;
-	struct s_stack_node *target_node;// a pointer to another t_stack_node
+	int		nbr;// The integer value of the node.
+	int		index;//The position of the node in the stack.
+	int		pust_cost;//The cost of pushing this node onto the stack. This could be used in the sorting algorithm to decide which node to push.
+	bool	above_median;//A boolean flag indicating whether the node's value is above the median. This could be used in the sorting algorithm to decide which nodes to push or pop.
+	bool	cheapest;//A boolean flag indicating whether this node is the cheapest to push. This could be used in the sorting algorithm to decide which node to push.
+	struct s_stack_node *target_node;// a pointer to another t_stack_node. This could be used to keep track of a target node in the sorting algorithm.
 	struct s_stack_node *prev;// a pointer to the previous t_stack_node in a linked list
 	struct s_stack_node *next;// a pointer to the next t_stack_node in a linked list
 }				t_stack_node;
