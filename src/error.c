@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:01:14 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/11 15:07:30 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/12 06:37:23 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ void	error(int e)
 	}
 	else
 		ft_putstr_fd ("Unknown error", STDERR_FILENO);
+	write(2, "\n", 1);
 	exit(EXIT_FAILURE);
 }
