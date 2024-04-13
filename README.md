@@ -34,14 +34,17 @@ This project was completed as a **solo project**. It provided an opportunity to 
 - Visualizer to see the sorting in action
 - Checker program to verify the correctness of the sort
 
-## Visualization
+## Data structure
 
-Stack a:  top -> [ nbr | index | push_cost | above_median | cheapest | target_node | prev | next ] -> 
+There are two stacks of integers, `a` and `b`. Each stack is represented as a linked list of `t_stack_node` structures.
+Here's a visualization of what the stacks might look like:
+
+> Stack a:  top -> [ nbr | index | push_cost | above_median | cheapest | target_node | prev | next ] -> 
                  [ nbr | index | push_cost | above_median | cheapest | target_node | prev | next ] -> 
                  [ nbr | index | push_cost | above_median | cheapest | target_node | prev | next ] -> NULL
           size = 3
 
-Stack b:  top -> [ nbr | index | push_cost | above_median | cheapest | target_node | prev | next ] -> 
+> Stack b:  top -> [ nbr | index | push_cost | above_median | cheapest | target_node | prev | next ] -> 
                  [ nbr | index | push_cost | above_median | cheapest | target_node | prev | next ] -> 
                  [ nbr | index | push_cost | above_median | cheapest | target_node | prev | next ] -> NULL
           size = 3
