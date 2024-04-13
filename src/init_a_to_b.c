@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 20:28:24 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/13 22:40:58 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/13 22:41:40 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static void	set_tartget_a(t_stack_node *a, t_stack_node *b)
 		while (current_b)
 		{
 			if (current_b->nbr < a->nbr &&
-				current_b->number > closest_smaller_number)
+				current_b->nbr > closest_smaller_number)
 			{
 				closest_smaller_number = current_b->nbr;
 				target_node = current_b;
