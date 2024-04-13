@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:02:10 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/13 15:49:21 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/13 16:09:54 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ static void	validate_single_argument(t_push_swap *ps)
 {
 	t_atoi	check;
 
-	if (ps->arg == NULL)
+	ft_printf("ps->arg: %s\n", ps->arg);
+	if (ps->arg[0] == '\0')
 		error(ERR_EMPTY_ARG);
 	if (is_not_int(ps->arg))
 		error(ERR_FORMAT);
@@ -75,7 +76,7 @@ int	validate_argument(t_push_swap *ps)
 		i = 1;
 		while (i < ps->argc)
 		{
-			ps->tab = ft_split(ps->argv[1], ' ');
+			ps->tab = ft_split(ps->argv[i], ' ');
 			if (!ps->tab)
 				return (0);
 			j = 0;
