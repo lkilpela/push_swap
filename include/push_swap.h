@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/13 14:44:08 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/13 20:35:03 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,11 @@ typedef struct	s_stack_node
 	struct s_stack_node *next;// a pointer to the next t_stack_node in a linked list
 }				t_stack_node;
 
-typedef struct s_stack
+/*typedef struct s_stack
 {
 	t_stack_node	*top;// a pointer to the top node in the stack. This is used to easily add elements to and remove elements from the top of the stack.
 	int				size;//the number of elements in the stack. This is used to quickly check if the stack is empty (size is 0) or to get the number of elements in the stack.
-}				t_stack;
+}				t_stack;*/
 
 //Handle errors
 int	validate_argument(t_push_swap *ps);
@@ -71,7 +71,7 @@ void	error(int e);
 
 // argument initiation
 void    init_push_swap(int argc, char **argv, t_push_swap *ps);
-void	init_stack(t_stack *a, t_stack *b);
+//void	init_stack(t_stack *a, t_stack *b);
 
 //Stack initiation
 

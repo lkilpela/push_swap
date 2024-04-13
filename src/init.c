@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:34:59 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/13 20:27:44 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/13 20:34:33 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ void	init_push_swap(int argc, char **argv, t_push_swap *ps)
 	ps->tab = NULL;
 }
 
-void	init_stack(t_stack *a, t_stack *b)
+/*void	init_stack(t_stack *a, t_stack *b)
 {
 	a->top = NULL;
 	a->size = 0;
 	b->top = NULL;
 	b->size = 0;
-}
+}*/
 
 void	init_node_a(int nbr, t_stack_node *a)
 {
