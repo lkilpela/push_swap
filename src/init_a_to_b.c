@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 20:28:24 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/13 22:41:40 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/13 22:43:48 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 //assign an index to each node in a stack
 //set above_median based on whether the node's index is above/below median index
-void	current_index(t_stack_node *stack)
+void	mark_median(t_stack_node *stack)
 {
 	int i;
 	int median;
