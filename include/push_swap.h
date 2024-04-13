@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/12 12:07:20 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/13 14:44:08 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct s_push_swap
 	char	**argv;
 	char	*arg;
 	int		argc;
+	char	**tab;
 }			t_push_swap;
 
 typedef struct	s_atoi
