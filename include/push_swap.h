@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/13 20:35:03 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/13 22:40:03 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ void	error(int e);
 // argument initiation
 void    init_push_swap(int argc, char **argv, t_push_swap *ps);
 //void	init_stack(t_stack *a, t_stack *b);
+void	init_nodes_a(t_stack_node *a, t_stack_node *b);
 
 //Stack initiation
 
@@ -84,7 +85,8 @@ void    init_push_swap(int argc, char **argv, t_push_swap *ps);
 //Algorithms
 
 //Utils
-t_atoi	check_atoi_overflow(const char *str);
+t_atoi			check_atoi_overflow(const char *str);
+t_stack_node	*find_max(t_stack_node *stack);
 
 //Handle memory
 void    free_ptrs(char **array);
