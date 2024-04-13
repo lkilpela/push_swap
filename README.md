@@ -49,6 +49,8 @@ Here's a visualization of what the stacks might look like:
                  [ nbr | index | push_cost | above_median | cheapest | target_node | prev | next ] -> NULL
           size = 3
 
+Each `[ nbr | index | push_cost | above_median | cheapest | target_node | prev | next ]` represents a `t_stack_node`. The `nbr`, `index`, `push_cost`, `above_median`, `cheapest`, `target_node`, `prev`, and `next` inside the brackets are the fields of the `t_stack_node`.
+
 ## 🏁 Getting Started
 
 ### Prerequisites
