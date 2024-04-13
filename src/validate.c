@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:02:10 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/13 16:09:54 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/13 16:21:11 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,9 @@ static void	is_duplicate(t_push_swap *ps)
 returns 0, the string does not contain any alphabetic characters.*/
 static int	is_not_int(const char *str)
 {
+	int		has_digit;
+
+	has_digit = 0;
 	while (ft_isspace(*str))
         str++;
 	if (*str == '-' || *str == '+')
@@ -46,9 +49,10 @@ static int	is_not_int(const char *str)
 	{
 		if (!ft_isdigit(*str))
 			return (1); // return 1 when a non-digit character is found
+		has_digit = 1;
 		str++;
 	}
-	return (0);// return 0 if all characters are digits (or the string is empty)
+	return (!has_digit);// return 0 if all characters are digits (or the string is empty)
 }
 
 static void	validate_single_argument(t_push_swap *ps)
@@ -56,8 +60,8 @@ static void	validate_single_argument(t_push_swap *ps)
 	t_atoi	check;
 
 	ft_printf("ps->arg: %s\n", ps->arg);
-	if (ps->arg[0] == '\0')
-		error(ERR_EMPTY_ARG);
+	//if (ps->arg[0] == '\0')
+		//error(ERR_EMPTY_ARG);
 	if (is_not_int(ps->arg))
 		error(ERR_FORMAT);
 	check = check_atoi_overflow(ps->arg);
@@ -76,6 +80,10 @@ int	validate_argument(t_push_swap *ps)
 		i = 1;
 		while (i < ps->argc)
 		{
+			if (ps->argv[i][0] == '\0')  // Check if the argument is an empty string
+                error(ERR_EMPTY_ARG);
+			if (is_not_int(ps->argv[i])) // Check if the argument is not an integer
+                error(ERR_FORMAT);
 			ps->tab = ft_split(ps->argv[i], ' ');
 			if (!ps->tab)
 				return (0);
