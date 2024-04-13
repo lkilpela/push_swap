@@ -34,6 +34,18 @@ This project was completed as a **solo project**. It provided an opportunity to 
 - Visualizer to see the sorting in action
 - Checker program to verify the correctness of the sort
 
+## Visualization
+
+Stack a:  top -> [ nbr | index | push_cost | above_median | cheapest | target_node | prev | next ] -> 
+                 [ nbr | index | push_cost | above_median | cheapest | target_node | prev | next ] -> 
+                 [ nbr | index | push_cost | above_median | cheapest | target_node | prev | next ] -> NULL
+          size = 3
+
+Stack b:  top -> [ nbr | index | push_cost | above_median | cheapest | target_node | prev | next ] -> 
+                 [ nbr | index | push_cost | above_median | cheapest | target_node | prev | next ] -> 
+                 [ nbr | index | push_cost | above_median | cheapest | target_node | prev | next ] -> NULL
+          size = 3
+
 ## 🏁 Getting Started
 
 ### Prerequisites
