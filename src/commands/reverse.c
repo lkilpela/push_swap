@@ -6,15 +6,15 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 14:58:16 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/14 14:58:59 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/14 15:50:21 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void ft_dlsadd_back(t_stack_node **lst, t_stack_node *new)
+static void	ft_dlsadd_back(t_stack_node **lst, t_stack_node *new)
 {
-    t_stack_node	*last;
+	t_stack_node	*last;
 
 	if (*lst == NULL)
 		*lst = new;
