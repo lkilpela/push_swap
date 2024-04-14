@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/14 22:04:21 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/14 22:28:54 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,7 @@ void			sort_three(t_stack_node **head);
 t_atoi			check_atoi_overflow(const char *str);
 t_stack_node	*find_max(t_stack_node *head);
 t_stack_node	*find_min(t_stack_node *head);
+bool			stack_sorted(t_stack_node *head);
 //Handle memory
 void			free_ptrs(char **array);
 #endif
