@@ -8,8 +8,8 @@ LIBS = $(LIBFT)/build/libft.a
 SRCS = src/init.c src/push_swap.c src/validate.c\
 	src/utils.c src/free.c src/error.c\
 	src/prepare_a_to_b.c src/prepare_b_to_a.c src/prepare_stack.c\
-	src/commands/push.c src/commands/reverse.c src/commands/rotate.c\
-	src/commands/swap.c
+	src/sort_stacks.c src/sort_three.c src/commands/push.c\
+	src/commands/reverse.c src/commands/rotate.c src/commands/swap.c
 OBJS = $(SRCS:%.c=%.o)
 
 all: libft $(NAME)
