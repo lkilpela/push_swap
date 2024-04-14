@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/14 12:28:28 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/14 12:33:11 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	error(int e);
 void    init_push_swap(int argc, char **argv, t_push_swap *ps);
 //void	init_stack(t_stack *a, t_stack *b);
 
-void	mark_median(t_stack_node *stack);
+void	mark_median(t_stack_node *n);
 
 //Stack preparation
 void			prepare_nodes_a(t_stack_node *a, t_stack_node *b);
@@ -91,7 +91,8 @@ void	init_node_b(int nbr, t_stack_node *a);
 
 //Utils
 t_atoi			check_atoi_overflow(const char *str);
-t_stack_node	*find_max(t_stack_node *stack);
+t_stack_node	*find_max(t_stack_node *n);
+t_stack_node	*find_min(t_stack_node *n);
 
 //Handle memory
 void    free_ptrs(char **array);
