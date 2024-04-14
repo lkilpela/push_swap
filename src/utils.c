@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 14:18:43 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/13 21:26:13 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/14 10:50:54 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ t_stack_node	*find_max(t_stack_node *stack)
 	if (!stack)
 		return (NULL);
 	max = LONG_MIN;
+	max_node = NULL;
 	while (stack)
 	{
 		if (stack->nbr > max)
@@ -69,4 +70,25 @@ t_stack_node	*find_max(t_stack_node *stack)
 		stack = stack->next;
 	}
 	return (max_node);
+}
+
+t_stack_node	*find_min(t_stack_node *stack)
+{
+	long			min;
+	t_stack_node	*min_node;
+
+	if (!stack)
+		return (NULL);
+	min = LONG_MAX;
+	min_node = NULL;
+	while (stack)
+	{
+		if (stack->nbr < min)
+		{
+			min = stack->nbr;
+			min_node = stack;
+		}
+		stack = stack->next;
+	}
+	return (min_node);
 }
