@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 20:28:24 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/14 09:44:33 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/14 09:45:16 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,6 @@ void	init_nodes_a(t_stack_node *a, t_stack_node *b)
 	mark_median(a);
 	mark_median(b);
 	set_target_a(a, b);
-	cost_analysis_a(a, b);
-	set_cheapeast(a);
+	analyse_cost_a(a, b);
+	set_cheapest(a);
 }
