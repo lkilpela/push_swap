@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 12:48:34 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/14 14:58:08 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/14 15:01:25 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,5 @@ static void push(t_stack_node **dst, t_stack_node **src)
 	*src = (*src)->next;
 	if (*src)
 		(*src)->prev = NULL;
-	
 	ft_dlstadd_front(dst, push_node);
 }
