@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 20:28:24 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/14 09:45:16 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/14 09:55:52 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	mark_median(t_stack_node *stack)
 }
 
 // Find 'a' node's target in stack 'b'
-static void	set_tartget_a(t_stack_node *a, t_stack_node *b)
+static void	set_target_a(t_stack_node *a, t_stack_node *b)
 {
 	t_stack_node	*current_b;
 	t_stack_node	*target_node;
@@ -64,7 +64,8 @@ static void	set_tartget_a(t_stack_node *a, t_stack_node *b)
 	}
 }
 
-static void	analyse_cost_a(t_stack_node *a, t_stack_node *b)
+// Calculate the cost of moving each node in stack a to its target position in stack b
+static void	calculate_cost_a(t_stack_node *a, t_stack_node *b)
 {
 	int	size_a;
 	int	size_b;
@@ -84,11 +85,31 @@ static void	analyse_cost_a(t_stack_node *a, t_stack_node *b)
 	}
 }
 
+void	set_cheapest(t_stack_node *stack)
+{
+	long			cheapest_value;
+	t_stack_node	*cheapest_node;
+
+	if (!stack)
+		return ;
+	cheapest_value = LONG_MAX;
+	while (stack)
+	{
+		if (stack->push_cost < cheapest_value)
+		{
+			cheapest_value = stack->push_cost;
+			cheapest_node = stack;
+		}
+		stack = stack->next;
+	}
+	cheapest_node->cheapest = true;
+}
+
 void	init_nodes_a(t_stack_node *a, t_stack_node *b)
 {
 	mark_median(a);
 	mark_median(b);
 	set_target_a(a, b);
-	analyse_cost_a(a, b);
+	calculate_cost_a(a, b);
 	set_cheapest(a);
 }
