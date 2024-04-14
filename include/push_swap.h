@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/14 15:48:10 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/14 17:54:21 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,9 @@ void			prepare_nodes_b(t_stack_node *a, t_stack_node *b);
 //Commands
 void			pa(t_stack_node **a, t_stack_node **b, bool print);
 void			pb(t_stack_node **b, t_stack_node **a, bool print);
+void			sa(t_stack_node	**a, bool print);
+void			sb(t_stack_node **b, bool print);
+void			ss(t_stack_node **a, t_stack_node **b, bool print);
 //Algorithms
 //Utils
 t_atoi			check_atoi_overflow(const char *str);

@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 15:55:08 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/14 17:42:46 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/14 17:54:03 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	swap(t_stack_node **head)
 }
 
 //Swap the first two nodes of stack `a` and print the instruction
-void	sa(t_stack_node	**a, bool print) 
+void	sa(t_stack_node	**a, bool print)
 {
     swap(a);
 	if (!print)
@@ -38,7 +38,7 @@ void	sa(t_stack_node	**a, bool print)
 }
 
 //Swap the first two nodes of stack `b` and print the instruction
-void	sb(t_stack_node **b, bool print) 
+void	sb(t_stack_node **b, bool print)
 {
 	swap(b);
 	if (!print)
