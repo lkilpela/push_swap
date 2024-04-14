@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 13:22:40 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/14 21:44:42 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/14 22:07:16 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,3 +34,11 @@ static void	reverse_both(t_stack_node **a, t_stack_node **b,
 	mark_median(*b);
 }
 
+static void	move_a_to_b(t_stack_node **a, t_stack_node **b)
+{
+	t_stack_node	*chepeast_node;
+
+	chepeast_node = get_cheapest;
+	if (chepeast_node->above_median && chepeast_node->target_node->above_median)
+		rotate_both(a, b, chepeast_node);
+}
