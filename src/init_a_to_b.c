@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 20:28:24 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/13 22:43:48 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/14 09:06:31 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	mark_median(t_stack_node *stack)
 		i++;
 	}
 }
+
 // Find 'a' node's target in stack 'b'
 static void	set_tartget_a(t_stack_node *a, t_stack_node *b)
 {
@@ -63,10 +64,29 @@ static void	set_tartget_a(t_stack_node *a, t_stack_node *b)
 	}
 }
 
+{
+	int	size_a;
+	int	size_b;
+
+	size_a = ft_lstsize(a);
+	size_b = ft_lstsize(b);
+	while (a)
+	{
+		a->push_cost = a->index;
+		if (!(a->above_median))
+			a->push_cost = size_a - (a->index);
+		if (a->target_node->above_median)
+			a->push_cost += a->target_node->index;
+		else
+			a->push_cost += size_b - (a->target_node->index);
+		a = a->next;
+	}
+}
+
 void	init_nodes_a(t_stack_node *a, t_stack_node *b)
 {
-	current_index(a);
-	current_index(b);
+	mark_median(a);
+	mark_median(b);
 	set_target_a(a, b);
 	cost_analysis_a(a, b);
 	set_cheapeast(a);

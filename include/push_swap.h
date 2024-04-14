@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/13 22:43:55 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/13 23:08:33 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ typedef struct	s_stack_node
 {
 	int		nbr;// The integer value of the node.
 	int		index;//The position of the node in the stack.
-	int		pust_cost;//The cost of pushing this node onto the stack. This could be used in the sorting algorithm to decide which node to push.
+	int		push_cost;//The cost of pushing this node onto the stack. This could be used in the sorting algorithm to decide which node to push.
 	bool	above_median;//A boolean flag indicating whether the node's value is above the median. This could be used in the sorting algorithm to decide which nodes to push or pop.
 	bool	cheapest;//A boolean flag indicating whether this node is the cheapest to push. This could be used in the sorting algorithm to decide which node to push.
 	struct s_stack_node *target_node;// a pointer to another t_stack_node. This could be used to keep track of a target node in the sorting algorithm.
