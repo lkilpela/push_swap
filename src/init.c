@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:34:59 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/13 20:34:33 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/14 09:44:09 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	init_node_a(int nbr, t_stack_node *a)
 {
 	a->nbr = nbr;
 	a->index = -1;
-	a->pust_cost = -1;
+	a->push_cost = -1;
 	a->above_median = false;
 	a->cheapest = false;
 	a->target_node = NULL;
@@ -44,7 +44,7 @@ void	init_node_b(int nbr, t_stack_node *b)
 {
 	b->nbr = nbr;
 	b->index = -1;
-	b->pust_cost = -1;
+	b->push_cost = -1;
 	b->above_median = false;
 	b->cheapest = false;
 	b->target_node = NULL;
