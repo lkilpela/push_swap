@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/14 10:11:58 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/14 10:17:50 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,8 @@ void	mark_median(t_stack_node *stack);
 
 //Nodes initiation
 void	prepare_nodes_a(t_stack_node *a, t_stack_node *b);
+void	prepare_nodes_b(t_stack_node *a, t_stack_node *b);
+
 //Commands
 
 //Algorithms
