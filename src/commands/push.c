@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 12:48:34 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/14 13:14:17 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/14 14:58:08 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,26 @@
 
 static void ft_dlstadd_front(t_stack_node **lst, t_stack_node *new)
 {
-    if (new)
-    {
-        new->next = *lst;
-        if (*lst)
-            (*lst)->prev = new;
-        *lst = new;
-    }
+	if (new)
+	{
+		new->next = *lst;
+		if (*lst)
+			(*lst)->prev = new;
+		*lst = new;
+	}
 }
 
-static void ft_dlsadd_back(t_stack_node **lst, t_stack_node *new)
-{
-    
-}
+
 static void push(t_stack_node **dst, t_stack_node **src)
 {
-    
+    t_stack_node	*push_node;
+
+	if (!*src)
+		return;
+	push_node = *src;
+	*src = (*src)->next;
+	if (*src)
+		(*src)->prev = NULL;
+	
+	ft_dlstadd_front(dst, push_node);
 }
