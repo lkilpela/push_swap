@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/13 23:08:33 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/14 10:11:58 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,13 +72,13 @@ void	error(int e);
 // argument initiation
 void    init_push_swap(int argc, char **argv, t_push_swap *ps);
 //void	init_stack(t_stack *a, t_stack *b);
-void	init_nodes_a(t_stack_node *a, t_stack_node *b);
+
 void	mark_median(t_stack_node *stack);
 
 //Stack initiation
 
 //Nodes initiation
-
+void	prepare_nodes_a(t_stack_node *a, t_stack_node *b);
 //Commands
 
 //Algorithms
