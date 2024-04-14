@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/14 22:28:54 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/14 22:34:40 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,6 @@ void			prep_push(t_stack_node **head, t_stack_node *top,
 					char stack_name);
 //Nodes initiation
 void			init_node_a(int nbr, t_stack_node *a);
-void			init_node_b(int nbr, t_stack_node *a);
 void			prepare_nodes_a(t_stack_node *a, t_stack_node *b);
 void			prepare_nodes_b(t_stack_node *a, t_stack_node *b);
 //Commands
