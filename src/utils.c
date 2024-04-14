@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 14:18:43 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/14 10:50:54 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/14 11:04:24 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ t_atoi	check_atoi_overflow(const char *str)
 	return (check);
 }
 
+// Search a stack and returns the node with the biggest number
 t_stack_node	*find_max(t_stack_node *stack)
 {
 	long			max;
@@ -72,6 +73,7 @@ t_stack_node	*find_max(t_stack_node *stack)
 	return (max_node);
 }
 
+// Search a stack and returns the node with the smallest number
 t_stack_node	*find_min(t_stack_node *stack)
 {
 	long			min;
@@ -80,7 +82,6 @@ t_stack_node	*find_min(t_stack_node *stack)
 	if (!stack)
 		return (NULL);
 	min = LONG_MAX;
-	min_node = NULL;
 	while (stack)
 	{
 		if (stack->nbr < min)
