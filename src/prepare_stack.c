@@ -6,21 +6,21 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 12:22:30 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/14 21:56:15 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/14 22:04:12 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack_node	*get_cheapest(t_stack_node *n)
+t_stack_node	*get_cheapest(t_stack_node *head)
 {
-	if (!n)
+	if (!head)
 		return (NULL);
-	while (n)
+	while (head)
 	{
-		if (n->cheapest)
-			return (n);
-		n = n->next;        
+		if (head->cheapest)
+			return (head);
+		head = head->next;        
 	}
 	return (NULL);
 }
