@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 20:28:24 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/14 09:29:30 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/14 09:44:33 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ static void	set_tartget_a(t_stack_node *a, t_stack_node *b)
 	}
 }
 
+static void	analyse_cost_a(t_stack_node *a, t_stack_node *b)
 {
 	int	size_a;
 	int	size_b;
@@ -82,8 +83,6 @@ static void	set_tartget_a(t_stack_node *a, t_stack_node *b)
 		a = a->next;
 	}
 }
-
-
 
 void	init_nodes_a(t_stack_node *a, t_stack_node *b)
 {
