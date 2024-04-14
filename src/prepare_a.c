@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_a_to_b.c                                      :+:      :+:    :+:   */
+/*   prepare_a.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 20:28:24 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/14 10:11:35 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/14 10:14:32 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ static void	calculate_cost_a(t_stack_node *a, t_stack_node *b)
 	}
 }
 
+// Find the node with smallest push_cost & set its 'cheapeast' attribute to true
 void	set_cheapest(t_stack_node *stack)
 {
 	long			cheapest_value;
