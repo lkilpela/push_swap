@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/14 10:19:01 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/14 10:45:07 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,8 @@ void	prepare_nodes_a(t_stack_node *a, t_stack_node *b);
 void	prepare_nodes_b(t_stack_node *a, t_stack_node *b);
 
 //Nodes initiation
-void	init_node_a(int nbr, t_stack_node *a)
-void	init_node_b(int nbr, t_stack_node *a)
+void	init_node_a(int nbr, t_stack_node *a);
+void	init_node_b(int nbr, t_stack_node *a);
 
 
 //Commands
