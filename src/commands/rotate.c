@@ -6,12 +6,13 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 17:54:57 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/14 18:24:30 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/14 18:38:53 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// Move the top node of a stack to the bottom
 static void	rotate(t_stack_node **head)
 {
 	t_stack_node	*last_node;
@@ -26,7 +27,7 @@ static void	rotate(t_stack_node **head)
 	last_node->next->next = NULL;
 }
 
- //Rotate the top `a` node to the bottom of the stack, and print the instruction
+ // Rotate the top `a` node to the bottom of the stack, and print the instruction
 void	ra(t_stack_node **a, bool print)
 {
 	rotate(a);
