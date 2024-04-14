@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/14 22:34:40 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/14 22:36:31 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,11 @@ enum	e_error
 
 typedef struct s_push_swap
 {
-	char	**argv;
-	char	*arg;
-	int		argc;
-	char	**tab;
+	char		**argv;
+	char		*arg;
+	int			argc;
+	char		**tab;
+	t_stack_node *a;
 }			t_push_swap;
 
 typedef struct s_atoi
