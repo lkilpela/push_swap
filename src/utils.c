@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 14:18:43 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/14 21:55:34 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/14 22:27:53 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,20 @@ t_atoi	check_atoi_overflow(const char *str)
 	check.valid = 0;
 	check.number = (int)result;
 	return (check);
+}
+
+// Check if stack is sorted in ascending order
+bool	stack_sorted(t_stack_node *head)
+{
+	if (!head)
+		return (true);
+	while (head->next)
+	{
+		if (head->nbr > head->next->nbr)
+			return (false);
+		head = head->next;
+	}
+	return (true);
 }
 
 // Search a stack and returns the node with the biggest number
