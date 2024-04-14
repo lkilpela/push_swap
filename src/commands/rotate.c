@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 17:54:57 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/14 18:07:57 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/14 18:24:30 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 static void	rotate(t_stack_node **head)
 {
-	t_stack_node	*temp;
+	t_stack_node	*last_node;
 
 	if (!*head || !(*head)->next)
 		return ;
-	temp = ft_lstlast(*head);
-	temp->next = *head;
+	last_node = ft_lstlast(*head);
+	last_node->next = *head;
 	*head = (*head)->next;
 	(*head)->prev = NULL;
-	temp->next->prev = temp;
-	temp->next->next = NULL;
+	last_node->next->prev = last_node;
+	last_node->next->next = NULL;
 }
 
  //Rotate the top `a` node to the bottom of the stack, and print the instruction
