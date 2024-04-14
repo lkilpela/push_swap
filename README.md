@@ -39,16 +39,17 @@ This project was completed as a **solo project**. It provided an opportunity to 
 There are two stacks of integers, `a` and `b`. Each stack is represented as a linked list of `t_stack_node` structures.
 Here's a visualization of what the stacks might look like:
 
-> Stack a:  top -> [ nbr | index | push_cost | above_median | cheapest | target_node | prev | next ] -> 
-                 [ nbr | index | push_cost | above_median | cheapest | target_node | prev | next ] -> 
-                 [ nbr | index | push_cost | above_median | cheapest | target_node | prev | next ] -> NULL
-          size = 3
+```
+Stack a:
+[ nbr | index | push_cost | above_median | cheapest | target_node | prev | next ] ->
+[ nbr | index | push_cost | above_median | cheapest | target_node | prev | next ] -> 
+[ nbr | index | push_cost | above_median | cheapest | target_node | prev | next ] -> NULL
 
-> Stack b:  top -> [ nbr | index | push_cost | above_median | cheapest | target_node | prev | next ] -> 
-                 [ nbr | index | push_cost | above_median | cheapest | target_node | prev | next ] -> 
-                 [ nbr | index | push_cost | above_median | cheapest | target_node | prev | next ] -> NULL
-          size = 3
-
+Stack b:
+[ nbr | index | push_cost | above_median | cheapest | target_node | prev | next ] -> 
+[ nbr | index | push_cost | above_median | cheapest | target_node | prev | next ] -> 
+[ nbr | index | push_cost | above_median | cheapest | target_node | prev | next ] -> NULL
+```
 Each `[ nbr | index | push_cost | above_median | cheapest | target_node | prev | next ]` represents a `t_stack_node`. The `nbr`, `index`, `push_cost`, `above_median`, `cheapest`, `target_node`, `prev`, and `next` inside the brackets are the fields of the `t_stack_node`.
 
 ## 🏁 Getting Started
