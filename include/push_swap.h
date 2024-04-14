@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/14 21:23:56 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/14 21:25:22 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,12 @@ void			pb(t_stack_node **b, t_stack_node **a, bool print);
 void			sa(t_stack_node	**a, bool print);
 void			sb(t_stack_node **b, bool print);
 void			ss(t_stack_node **a, t_stack_node **b, bool print);
+void			rra(t_stack_node **a, bool print);
+void			rrb(t_stack_node **b, bool print);
+void			rrr(t_stack_node **a, t_stack_node **b, bool print);
+void			ra(t_stack_node **a, bool print);
+void			rb(t_stack_node **b, bool print);
+void			rr(t_stack_node **a, t_stack_node **b, bool print);
 //Algorithms
 void			sort_three(t_stack_node **head);
 //Utils
