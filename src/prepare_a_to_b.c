@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 20:28:24 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/14 12:30:00 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/14 21:30:35 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,8 @@ static void	set_target_a(t_stack_node *a, t_stack_node *b)
 	}
 }
 
-// Calculate the cost of moving each node in stack a to its target position in stack b
+// Calculate the cost of moving each node in stack a to its target position 
+// in stack b
 static void	calculate_cost_a(t_stack_node *a, t_stack_node *b)
 {
 	int	size_a;
