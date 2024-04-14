@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/14 17:54:21 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/14 21:23:56 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ void			sa(t_stack_node	**a, bool print);
 void			sb(t_stack_node **b, bool print);
 void			ss(t_stack_node **a, t_stack_node **b, bool print);
 //Algorithms
+void			sort_three(t_stack_node **head);
 //Utils
 t_atoi			check_atoi_overflow(const char *str);
 t_stack_node	*find_max(t_stack_node *n);
