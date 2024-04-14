@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/14 21:25:22 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/14 21:56:23 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void			init_push_swap(int argc, char **argv, t_push_swap *ps);
 void			mark_median(t_stack_node *n);
 //Stack preparation
 t_stack_node	*get_cheapest(t_stack_node *n);
-void			prep_push(t_stack_node **stack, t_stack_node *top,
+void			prep_push(t_stack_node **head, t_stack_node *top,
 					char stack_name);
 //Nodes initiation
 void			init_node_a(int nbr, t_stack_node *a);
@@ -102,8 +102,8 @@ void			rr(t_stack_node **a, t_stack_node **b, bool print);
 void			sort_three(t_stack_node **head);
 //Utils
 t_atoi			check_atoi_overflow(const char *str);
-t_stack_node	*find_max(t_stack_node *n);
-t_stack_node	*find_min(t_stack_node *n);
+t_stack_node	*find_max(t_stack_node *head);
+t_stack_node	*find_min(t_stack_node *head);
 //Handle memory
 void			free_ptrs(char **array);
 #endif

@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 20:28:24 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/14 21:30:35 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/14 21:52:04 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,22 +87,22 @@ static void	calculate_cost_a(t_stack_node *a, t_stack_node *b)
 }
 
 // Find the node with smallest push_cost & set its 'cheapeast' attribute to true
-static void	set_cheapest(t_stack_node *n)
+static void	set_cheapest(t_stack_node *head)
 {
 	long			cheapest_value;
 	t_stack_node	*cheapest_node;
 
-	if (!n)
+	if (!head)
 		return ;
 	cheapest_value = LONG_MAX;
-	while (n)
+	while (head)
 	{
-		if (n->push_cost < cheapest_value)
+		if (head->push_cost < cheapest_value)
 		{
-			cheapest_value = n->push_cost;
-			cheapest_node = n;
+			cheapest_value = head->push_cost;
+			cheapest_node = head;
 		}
-		n = n->next;
+		head = head->next;
 	}
 	cheapest_node->cheapest = true;
 }

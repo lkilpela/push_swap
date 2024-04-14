@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 14:18:43 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/14 12:31:33 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/14 21:55:34 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,44 +52,44 @@ t_atoi	check_atoi_overflow(const char *str)
 }
 
 // Search a stack and returns the node with the biggest number
-t_stack_node	*find_max(t_stack_node *n)
+t_stack_node	*find_max(t_stack_node *head)
 {
 	long			max;
 	t_stack_node	*max_node;
 
-	if (!n)
+	if (!head)
 		return (NULL);
 	max = LONG_MIN;
 	max_node = NULL;
-	while (n)
+	while (head)
 	{
-		if (n->nbr > max)
+		if (head->nbr > max)
 		{
-			max = n->nbr;
-			max_node = n;
+			max = head->nbr;
+			max_node = head;
 		}
-		n = n->next;
+		head = head->next;
 	}
 	return (max_node);
 }
 
 // Search a stack and returns the node with the smallest number
-t_stack_node	*find_min(t_stack_node *n)
+t_stack_node	*find_min(t_stack_node *head)
 {
 	long			min;
 	t_stack_node	*min_node;
 
-	if (!n)
+	if (!head)
 		return (NULL);
 	min = LONG_MAX;
-	while (n)
+	while (head)
 	{
-		if (n->nbr < min)
+		if (head->nbr < min)
 		{
-			min = n->nbr;
-			min_node = n;
+			min = head->nbr;
+			min_node = head;
 		}
-		n = n->next;
+		head = head->next;
 	}
 	return (min_node);
 }
