@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 20:28:24 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/14 10:20:42 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/14 12:30:00 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 
 //assign an index to each node in a stack
 //set above_median based on whether the node's index is above/below median index
-void	mark_median(t_stack_node *stack)
+void	mark_median(t_stack_node *n)
 {
 	int i;
 	int median;
 
 	i = 0;
-	if (!stack)
+	if (!n)
 		return;
-	median = ft_lstsize(stack) / 2;
-	while (stack)
+	median = ft_lstsize(n) / 2;
+	while (n)
 	{
-		stack->index = i;
+		n->index = i;
 		if (i < median)
-			stack->above_median = true;
+			n->above_median = true;
 		else
-			stack->above_median = false;
-		stack = stack->next;
+			n->above_median = false;
+		n = n->next;
 		i++;
 	}
 }
@@ -86,22 +86,22 @@ static void	calculate_cost_a(t_stack_node *a, t_stack_node *b)
 }
 
 // Find the node with smallest push_cost & set its 'cheapeast' attribute to true
-static void	set_cheapest(t_stack_node *stack)
+static void	set_cheapest(t_stack_node *n)
 {
 	long			cheapest_value;
 	t_stack_node	*cheapest_node;
 
-	if (!stack)
+	if (!n)
 		return ;
 	cheapest_value = LONG_MAX;
-	while (stack)
+	while (n)
 	{
-		if (stack->push_cost < cheapest_value)
+		if (n->push_cost < cheapest_value)
 		{
-			cheapest_value = stack->push_cost;
-			cheapest_node = stack;
+			cheapest_value = n->push_cost;
+			cheapest_node = n;
 		}
-		stack = stack->next;
+		n = n->next;
 	}
 	cheapest_node->cheapest = true;
 }
