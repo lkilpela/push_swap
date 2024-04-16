@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 10:13:11 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/14 10:57:38 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/16 22:56:01 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void set_target_b(t_stack_node *a, t_stack_node *b)
     long            closest_bigger_number;
 
     if (!a)
-        return (NULL);
+        return ;
     while (b)
     {
         closest_bigger_number = LONG_MAX;
