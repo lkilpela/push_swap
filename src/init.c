@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:34:59 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/16 22:50:05 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/16 22:51:11 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	init_node_a(t_push_swap *ps)
 	i = 1;
 	while (i < ps->argc)
 	{
-		if (validate_argument(ps->argv[i]))
+		if (validate_argument(ps))
 		{
 			new_node = create_node(ps->argv[i]);// Create a new node from the argument
 			if (!new_node)
