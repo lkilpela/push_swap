@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/16 22:25:16 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/16 22:49:52 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ enum	e_error
 	ERR_FORMAT,
 	ERR_EMPTY_ARG,
 	ERR_DUPLICATE,
+	ERR_MEMORY,
 	LAST_ERROR
 };
 

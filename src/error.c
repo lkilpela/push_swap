@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:01:14 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/12 06:37:23 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/16 22:49:38 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ static const char	*get_error_messages(int e)
 		"Invalid argument: format.",
 		"Empty argument.",
 		"Duplicate values.",
+		"Memory allocation failed",
 		"Last error"
 	};
 
