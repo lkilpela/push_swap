@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/14 22:36:31 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/16 22:14:50 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ t_stack_node	*get_cheapest(t_stack_node *head);
 void			prep_push(t_stack_node **head, t_stack_node *top,
 					char stack_name);
 //Nodes initiation
-void			init_node_a(int nbr, t_stack_node *a);
+void			init_node_a(t_push_swap *ps);
 void			prepare_nodes_a(t_stack_node *a, t_stack_node *b);
 void			prepare_nodes_b(t_stack_node *a, t_stack_node *b);
 //Commands
