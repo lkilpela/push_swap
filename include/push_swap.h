@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/16 22:14:50 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/16 22:25:16 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,6 @@ enum	e_error
 	ERR_DUPLICATE,
 	LAST_ERROR
 };
-
-typedef struct s_push_swap
-{
-	char		**argv;
-	char		*arg;
-	int			argc;
-	char		**tab;
-	t_stack_node *a;
-}			t_push_swap;
 
 typedef struct s_atoi
 {
@@ -71,6 +62,16 @@ typedef struct s_stack_node
 	struct s_stack_node	*next;// a pointer to the next t_stack_node in a 
 								//linked list
 }				t_stack_node;
+
+typedef struct s_push_swap
+{
+	char		**argv;
+	char		*arg;
+	int			argc;
+	char		**tab;
+	t_stack_node *a;
+}			t_push_swap;
+
 
 //Handle errors
 int				validate_argument(t_push_swap *ps);
