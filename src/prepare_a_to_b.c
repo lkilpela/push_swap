@@ -6,11 +6,16 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 20:28:24 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/14 21:52:04 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/16 22:55:25 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int ft_stacksize(t_stack_node *stack) 
+{
+    return ft_lstsize((t_list *)stack);
+}
 
 //assign an index to each node in a stack
 //set above_median based on whether the node's index is above/below median index
@@ -22,7 +27,7 @@ void	mark_median(t_stack_node *n)
 	i = 0;
 	if (!n)
 		return;
-	median = ft_lstsize(n) / 2;
+	median = ft_stacksize(n) / 2;
 	while (n)
 	{
 		n->index = i;
@@ -71,8 +76,8 @@ static void	calculate_cost_a(t_stack_node *a, t_stack_node *b)
 	int	size_a;
 	int	size_b;
 
-	size_a = ft_lstsize(a);
-	size_b = ft_lstsize(b);
+	size_a = ft_stacksize(a);
+	size_b = ft_stacksize(b);
 	while (a)
 	{
 		a->push_cost = a->index;
