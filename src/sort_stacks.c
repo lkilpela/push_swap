@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 13:22:40 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/17 10:00:46 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/17 10:09:18 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void	sort_stacks(t_stack_node **a, t_stack_node **b)
 {
 	int	size_a;
 
-	size_a = ft_stacksize(*a);
+	size_a = stack_size(*a);
 	if (size_a-- > 3 && !stack_sorted(*a))// checks if the original value of size_a is greater than 3, and then decreases len_a by 1
 		pa(b, a, false);
 	if (size_a-- > 3 && !stack_sorted(*a))
