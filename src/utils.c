@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 14:18:43 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/17 21:02:56 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/17 21:49:53 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,12 @@ t_stack_node	*find_min(t_stack_node *head)
 	return (min_node);
 }
 
-int	stack_size(t_stack_node *stack)
+int	stack_size(t_stack_node *head)
 {
-	return (ft_lstsize((t_list *)stack));
+	return (ft_lstsize((t_list *)head));
+}
+
+t_stack_node	*stack_last(t_stack_node *head)
+{
+	return ((t_stack_node *)ft_lstlast((t_list *)head));
 }
