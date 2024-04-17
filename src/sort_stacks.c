@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 13:22:40 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/17 07:55:59 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/17 08:04:14 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,24 @@ static void	move_a_to_b(t_stack_node **a, t_stack_node **b)
 		rotate_both(a, b, chepeast_node);
 }
 
+// Check if stack is sorted in ascending order
+bool	stack_sorted(t_stack_node *head)
+{
+	if (!head)
+		return (true);
+	while (head->next)
+	{
+		if (head->nbr > head->next->nbr)
+			return (false);
+		head = head->next;
+	}
+	return (true);
+}
+
 void	sort_stacks(t_stack_node *a, t_stack_node *b)
 {
 	int	size_a;
 
 	size_a = ft_stacksize(a);
+	if ()
 }

@@ -6,13 +6,11 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 20:28:24 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/17 07:56:50 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/17 08:03:10 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-
 
 //assign an index to each node in a stack
 //set above_median based on whether the node's index is above/below median index
