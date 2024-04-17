@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/17 21:53:29 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/17 22:20:34 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,5 +114,5 @@ int 			stack_size(t_stack_node *head);
 t_stack_node	*stack_last(t_stack_node *head);
 //Handle memory
 void			free_ptrs(char **array);
-void			free_stack(t_stack_node **head);
+void			stack_clear(t_stack_node **head);
 #endif
