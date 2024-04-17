@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 20:28:24 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/17 08:03:10 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/17 10:08:31 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	mark_median(t_stack_node *n)
 	i = 0;
 	if (!n)
 		return;
-	median = ft_stacksize(n) / 2;
+	median = stack_size(n) / 2;
 	while (n)
 	{
 		n->index = i;
@@ -71,8 +71,8 @@ static void	calculate_cost_a(t_stack_node *a, t_stack_node *b)
 	int	size_a;
 	int	size_b;
 
-	size_a = ft_stacksize(a);
-	size_b = ft_stacksize(b);
+	size_a = stack_size(a);
+	size_b = stack_size(b);
 	while (a)
 	{
 		a->push_cost = a->index;
