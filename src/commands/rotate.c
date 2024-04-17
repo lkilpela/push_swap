@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 17:54:57 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/14 18:38:53 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/17 21:57:01 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	rotate(t_stack_node **head)
 
 	if (!*head || !(*head)->next)
 		return ;
-	last_node = ft_lstlast(*head);
+	last_node = stack_last(*head);
 	last_node->next = *head;
 	*head = (*head)->next;
 	(*head)->prev = NULL;

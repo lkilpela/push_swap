@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 14:58:16 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/14 19:30:10 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/17 21:56:43 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	reverse_rotate(t_stack_node **head)
 
 	if (!(*head) || !(*head)->next)
 		return ;
-	last_node = ft_lstlast(*head);
+	last_node = stack_last(*head);
 	last_node->prev->next = NULL; //Disconnect last node from the stack
 	last_node->next = *head;
 	last_node->prev = NULL;
@@ -36,7 +36,7 @@ node itself, last_node->prev->next effectively refers to the last node.*/
 //Rotate the bottom of `a` to the top of the stack and print the instruction
 void	rra(t_stack_node **a, bool print)
 {
-	rev_rotate(a);
+	reverse_rotate(a);
 	if (!print)
 		ft_printf("rra\n");
 }
@@ -44,7 +44,7 @@ void	rra(t_stack_node **a, bool print)
  //Rotate the bottom of `b` to the top of the stack and print the instruction
 void	rrb(t_stack_node **b, bool print)
 {
-	rev_rotate(b);
+	reverse_rotate(b);
 	if (!print)
 		ft_printf("rrb\n");
 }
@@ -52,8 +52,8 @@ void	rrb(t_stack_node **b, bool print)
  //Stimultaneously rotate both stacks' bottom nodes to the top of their stacks, halving the cost of instructions
 void	rrr(t_stack_node **a, t_stack_node **b, bool print)
 {
-	rev_rotate(a);
-	rev_rotate(b);
+	reverse_rotate(a);
+	reverse_rotate(b);
 	if (!print)
 		ft_printf("rrr\n");
 }
