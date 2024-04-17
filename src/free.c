@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 09:41:41 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/17 22:00:41 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/17 22:19:46 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,25 @@ void	free_ptrs(char **array)
 	}
 	free(array);
 }
-
-/*void	free_stack(t_stack_node **head)
+static void	stack_delone(t_stack_node *head)
 {
-	ft_lstclear((t_list**)head, free);
-}*/
+	if (!head)
+		return ;
+	head->nbr = 0;
+	free(head);
+}
+
+void	stack_clear(t_stack_node **head)
+{
+	t_stack_node	*temp;
+
+	if (!*head)
+		return ;
+	while (*head)
+	{
+		temp = (*head)->next;
+		stack_delone(*head);
+		*head = temp;
+	}
+	*head = NULL;
+}
