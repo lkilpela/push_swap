@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 14:57:54 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/17 10:07:42 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/17 10:10:59 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ int main(int argc, char **argv)
 	{
 		if (stack_size(ps.a) == 2)
 			sa(&ps.a, false);
+		else if (stack_size(ps.a) == 3)
+			sort_three(&ps.a);
+		else
+			sort_stacks(&ps.a, &ps.b);
 	}
 	return (0);
 }
