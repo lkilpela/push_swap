@@ -6,16 +6,13 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 20:28:24 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/16 22:55:25 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/17 07:56:50 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_stacksize(t_stack_node *stack) 
-{
-    return ft_lstsize((t_list *)stack);
-}
+
 
 //assign an index to each node in a stack
 //set above_median based on whether the node's index is above/below median index

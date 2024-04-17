@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 13:22:40 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/17 06:43:44 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/17 07:55:59 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,11 @@ static void	move_a_to_b(t_stack_node **a, t_stack_node **b)
 	chepeast_node = get_cheapest(*a);
 	if (chepeast_node->above_median && chepeast_node->target_node->above_median)
 		rotate_both(a, b, chepeast_node);
+}
+
+void	sort_stacks(t_stack_node *a, t_stack_node *b)
+{
+	int	size_a;
+
+	size_a = ft_stacksize(a);
 }
