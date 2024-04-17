@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:34:59 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/16 22:51:11 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/17 06:38:52 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,16 +49,13 @@ void	init_node_a(t_push_swap *ps)
 	i = 1;
 	while (i < ps->argc)
 	{
-		if (validate_argument(ps))
-		{
-			new_node = create_node(ps->argv[i]);// Create a new node from the argument
-			if (!new_node)
-				error(ERR_MEMORY);
-			new_node->next = ps->a; // Add the new node to the stack. The next pointer of the new node is set to the current top of the stack
-			if (ps->a)// If the stack is not empty, the previous pointer of the current top node is set to the new node
-				ps->a->prev = new_node;
-			ps->a = new_node; // The top of the stack is updated to be the new node
-		}
+		new_node = create_node(ps->argv[i]);// Create a new node from the argument
+		if (!new_node)
+			error(ERR_MEMORY);
+		new_node->next = ps->a; // Add the new node to the stack. The next pointer of the new node is set to the current top of the stack
+		if (ps->a)// If the stack is not empty, the previous pointer of the current top node is set to the new node
+			ps->a->prev = new_node;
+		ps->a = new_node; // The top of the stack is updated to be the new node
 		i++;
 	}
 }
