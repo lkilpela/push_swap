@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 20:28:24 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/17 10:08:31 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/17 20:53:42 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 
 //assign an index to each node in a stack
 //set above_median based on whether the node's index is above/below median index
-void	mark_median(t_stack_node *n)
+void	mark_median(t_stack_node *head)
 {
-	int i;
-	int median;
+	int	i;
+	int	median;
 
 	i = 0;
-	if (!n)
+	if (!head)
 		return;
-	median = stack_size(n) / 2;
-	while (n)
+	median = stack_size(head) / 2;
+	while (head)
 	{
-		n->index = i;
+		head->index = i;
 		if (i < median)
-			n->above_median = true;
+			head->above_median = true;
 		else
-			n->above_median = false;
-		n = n->next;
+			head->above_median = false;
+		head = head->next;
 		i++;
 	}
 }
@@ -42,14 +42,14 @@ static void	set_target_a(t_stack_node *a, t_stack_node *b)
 	t_stack_node	*target_node;
 	long			closest_smaller_number;
 
-	while(a)
+	while (a)
 	{
 		closest_smaller_number = LONG_MIN;
 		current_b = b;
 		while (current_b)
 		{
-			if (current_b->nbr < a->nbr &&
-				current_b->nbr > closest_smaller_number)
+			if (current_b->nbr < a->nbr
+				&& current_b->nbr > closest_smaller_number)
 			{
 				closest_smaller_number = current_b->nbr;
 				target_node = current_b;

@@ -6,13 +6,13 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 14:18:43 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/17 10:08:00 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/17 21:02:56 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int is_overflow(long long result, int sign, int digit)
+static int	is_overflow(long long result, int sign, int digit)
 {
 	if ((sign == 1 && result > INT_MAX / 10 - digit)
 		|| (sign == -1 && result < INT_MIN / 10 + digit))
@@ -22,11 +22,11 @@ static int is_overflow(long long result, int sign, int digit)
 
 t_atoi	check_atoi_overflow(const char *str)
 {
-    int			sign;
+	int			sign;
 	int			digit;
-    long long	result;
+	long long	result;
 	t_atoi		check;
-    
+
 	sign = 1;
 	result = 0;
 	while (ft_isspace(*str))
@@ -94,7 +94,7 @@ t_stack_node	*find_min(t_stack_node *head)
 	return (min_node);
 }
 
-int stack_size(t_stack_node *stack)
+int	stack_size(t_stack_node *stack)
 {
-    return (ft_lstsize((t_list *)stack));
+	return (ft_lstsize((t_list *)stack));
 }

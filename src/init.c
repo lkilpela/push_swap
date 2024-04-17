@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:34:59 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/17 06:38:52 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/17 20:51:18 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ void	init_push_swap(int argc, char **argv, t_push_swap *ps)
 }
 
 // Function to create a new node from a string and add it to the stack
-t_stack_node *create_node(const char *str)
+t_stack_node	*create_node(const char *str)
 {
-	int	nbr;
-	t_stack_node *new_node;
+	int				nbr;
+	t_stack_node	*new_node;
 
 	nbr = ft_atoi(str);
 	new_node = malloc(sizeof(t_stack_node));

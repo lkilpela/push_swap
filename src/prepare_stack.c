@@ -6,11 +6,25 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 12:22:30 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/14 22:04:12 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/17 21:09:35 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+// Check if stack is sorted in ascending order
+bool	stack_sorted(t_stack_node *head)
+{
+	if (!head)
+		return (true);
+	while (head->next)
+	{
+		if (head->nbr > head->next->nbr)
+			return (false);
+		head = head->next;
+	}
+	return (true);
+}
 
 t_stack_node	*get_cheapest(t_stack_node *head)
 {
@@ -20,7 +34,7 @@ t_stack_node	*get_cheapest(t_stack_node *head)
 	{
 		if (head->cheapest)
 			return (head);
-		head = head->next;        
+		head = head->next;
 	}
 	return (NULL);
 }
@@ -43,5 +57,16 @@ void	prep_push(t_stack_node **head, t_stack_node *top, char stack_name)
 			else
 				rrb(head, false);
 		}
+	}
+}
+
+void	min_on_top(t_stack_node **a)
+{
+	while ((*a)->nbr != find_min(*a)->nbr)
+	{
+		if (find_min(*a)->above_median)
+			ra(a, false);
+		else
+			rra(a, false);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:01:14 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/16 22:49:38 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/17 20:50:19 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static const char	*get_error_messages(int e)
 {
-	static const char   *error_messages[] = {
+	static const char	*error_messages[] = {
 		"No error",
 		"Not enough arguments.",
 		"Invalid argument: integer overflow.",

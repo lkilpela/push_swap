@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 13:22:40 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/17 10:09:18 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/17 21:07:29 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static void	move_a_to_b(t_stack_node **a, t_stack_node **b)
 		&& chepeast_node->target_node->above_median)
 		rotate_both(a, b, chepeast_node);
 	else if (!(chepeast_node->above_median)
-			&& (!chepeast_node->target_node->above_median))
+		&& (!chepeast_node->target_node->above_median))
 		reverse_both(a, b, chepeast_node);
 	prep_push(a, chepeast_node, 'a');
 	prep_push(b, chepeast_node, 'b');
@@ -56,38 +56,13 @@ static void	move_b_to_a(t_stack_node **a, t_stack_node **b)
 	pa(a, b, false);
 }
 
-static void	min_on_top(t_stack_node **a)
-{
-	while ((*a)->nbr != find_min(*a)->nbr)
-	{
-		if (find_min(*a)->above_median)
-			ra(a, false);
-		else
-			rra(a, false);
-	}
-}
-
-// Check if stack is sorted in ascending order
-bool	stack_sorted(t_stack_node *head)
-{
-	if (!head)
-		return (true);
-	while (head->next)
-	{
-		if (head->nbr > head->next->nbr)
-			return (false);
-		head = head->next;
-	}
-	return (true);
-}
-
 // sorts stack `a` if it has more than 3 nodes
 void	sort_stacks(t_stack_node **a, t_stack_node **b)
 {
 	int	size_a;
 
 	size_a = stack_size(*a);
-	if (size_a-- > 3 && !stack_sorted(*a))// checks if the original value of size_a is greater than 3, and then decreases len_a by 1
+	if (size_a-- > 3 && !stack_sorted(*a))
 		pa(b, a, false);
 	if (size_a-- > 3 && !stack_sorted(*a))
 		pa(b, a, false);
