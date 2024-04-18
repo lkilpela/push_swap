@@ -6,11 +6,19 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 21:08:24 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/18 21:11:12 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/18 21:25:41 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static int	ft_is_overflow(long result, int sign, int digit)
+{
+	if ((sign == 1 && result > (INT_MAX - digit) / 10)
+		|| (sign == -1 && result < (INT_MIN + digit) / 10))
+		return (1);
+	return (0);
+}
 
 long	ft_atol(const char *str)
 {

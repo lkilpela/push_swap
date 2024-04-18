@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:02:10 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/18 21:17:25 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/18 21:26:08 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,11 @@ static int	is_not_int(const char *str)
 
 static void	validate_single_argument(t_push_swap *ps)
 {
-	t_atoi	check;
+	t_atol	check;
 
 	if (is_not_int(ps->arg))
 		error(ERR_FORMAT);
-	check = check_atoi_overflow(ps->arg);
+	check = check_atol_overflow(ps->arg);
 	if (check.valid == 1)
 		error(ERR_INT_OVERFLOW);
 	is_duplicate(ps);

@@ -6,13 +6,24 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:01:14 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/17 20:50:19 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/18 21:30:47 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static const char	*get_error_messages(int e)
+void	error(int e)
+{
+	if (e >= 0 || e < LAST_ERROR)
+	{
+		ft_putstr_fd("Error\n", STDERR_FILENO);
+	}
+	else
+		ft_putstr_fd ("Unknown error\n", STDERR_FILENO);
+	exit(EXIT_FAILURE);
+}
+
+/*static const char	*get_error_messages(int e)
 {
 	static const char	*error_messages[] = {
 		"No error",
@@ -26,20 +37,4 @@ static const char	*get_error_messages(int e)
 	};
 
 	return (error_messages[e]);
-}
-
-void	error(int e)
-{
-	const char	*message;
-
-	if (e >= 0 || e < LAST_ERROR)
-	{
-		message = get_error_messages(e);
-		ft_putstr_fd("Error\n", STDERR_FILENO);
-		ft_putstr_fd(message, STDERR_FILENO);
-	}
-	else
-		ft_putstr_fd ("Unknown error", STDERR_FILENO);
-	write(2, "\n", 1);
-	exit(EXIT_FAILURE);
-}
+}*/
