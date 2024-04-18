@@ -9,7 +9,7 @@
                 "-fansi-escape-codes",
                 "-g",
                 "-o",
-                "${workspaceFolder}/include/pipex.h",
+                "${workspaceFolder}/include/push_swap.h",
                 "${workspaceFolder}/build/libft.a",
                 "${workspaceFolder}/src/*.c"
             ],
