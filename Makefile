@@ -18,24 +18,28 @@ libft:
 	@make -C $(LIBFT)
 
 %.o : %.c
-	@echo "\033[32m[push_swap] Compiling $< into $@\033[0m"
+	@echo "[$(NAME)] $(GREEN)Compiling $< into $@$(RESET)"
 	@$(CC) $(CCFLAGS) -o $@ -c $< $(HDRS)
 
 $(NAME): $(OBJS)
 	@$(CC) $(OBJS) $(LIBS) $(HDRS) -o $(NAME) -fsanitize=address
-	@echo "[push_swap] Built target push_swap"
+	@echo "[$(NAME)] Built target push_swap"
 
 clean:
 	@rm -rf $(OBJS)
 	@make clean -C $(LIBFT)
-	@echo "[push_swap] Object files cleaned."
+	@echo "[$(NAME)] Object files cleaned."
 
 fclean: clean
 	@rm -rf $(NAME)
 	@rm -rf $(LIBFT)/build
-	@echo "[push_swap] Everything deleted."
+	@echo "[$(NAME)] Everything deleted."
 
 re: fclean all
-	@echo "[push_swap] Everything rebuilt."
+	@echo "[$(NAME)] Everything rebuilt."
 
 .PHONY: all clean fclean re libft
+
+GREEN = \033[0;32m
+RED = \033[0;31m
+RESET = \033[0m

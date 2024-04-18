@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:02:10 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/18 21:26:08 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/18 21:46:31 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ int	validate_argument(t_push_swap *ps)
 {
 	int		i;
 	int		j;
+	long	n;
 
 	if (ps->argc >= 2)
 	{
@@ -80,8 +81,11 @@ int	validate_argument(t_push_swap *ps)
 		{
 			if (ps->argv[i][0] == '\0')
 				error(ERR_EMPTY_ARG);
-			if (is_not_int(ps->argv[i]))
-				error(ERR_FORMAT);
+			n = ft_atol(ps->argv[i]);
+			if (n > INT_MAX || n < INT_MIN)
+				error(ERR_INT_OVERFLOW);
+			//if (is_not_int(ps->argv[i]))
+				//error(ERR_FORMAT);
 			ps->tab = ft_split(ps->argv[i], ' ');
 			if (!ps->tab)
 				return (0);
