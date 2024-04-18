@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:34:59 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/17 20:51:18 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/18 21:00:51 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	init_push_swap(int argc, char **argv, t_push_swap *ps)
 	ps->argv = argv;
 	ps->arg = NULL;
 	ps->tab = NULL;
+	ps->a = NULL;
+	ps->b = NULL;
 }
 
 // Function to create a new node from a string and add it to the stack
