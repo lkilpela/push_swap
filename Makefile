@@ -14,15 +14,19 @@ OBJS = $(SRCS:%.c=%.o)
 
 all: libft $(NAME)
 
-libft: 
+libft:
+	@echo "--------------------------------------------"
 	@make -C $(LIBFT)
-
+	@echo "--------------------------------------------"
 %.o : %.c
 	@$(CC) $(CCFLAGS) -o $@ -c $< $(HDRS)
+	@echo "$(GREEN)Compiled: $< $(RESET)"
 
 $(NAME): $(OBJS)
+	@echo "--------------------------------------------"
 	@$(CC) $(OBJS) $(LIBS) $(HDRS) -o $(NAME) -fsanitize=address
 	@echo "[$(NAME)] $(BLUE)Built target push_swap$(RESET)"
+	@echo "--------------------------------------------"
 
 clean:
 	@rm -rf $(OBJS)
