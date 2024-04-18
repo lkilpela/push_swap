@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:02:10 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/17 21:00:48 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/18 21:17:25 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	is_duplicate(t_push_swap *ps)
 		j = i + 1;
 		while (j < ps->argc && !flg)
 		{
-			if (ft_atoi(ps->argv[i]) == ft_atoi(ps->argv[j]))
+			if (ft_atol(ps->argv[i]) == ft_atol(ps->argv[j]))
 				flg = 1;
 			j++;
 		}
