@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:01:14 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/18 21:30:47 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/18 21:32:07 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,3 @@ void	error(int e)
 		ft_putstr_fd ("Unknown error\n", STDERR_FILENO);
 	exit(EXIT_FAILURE);
 }
-
-/*static const char	*get_error_messages(int e)
-{
-	static const char	*error_messages[] = {
-		"No error",
-		"Not enough arguments.",
-		"Invalid argument: integer overflow.",
-		"Invalid argument: format.",
-		"Empty argument.",
-		"Duplicate values.",
-		"Memory allocation failed",
-		"Last error"
-	};
-
-	return (error_messages[e]);
-}*/
