@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:34:59 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/18 21:00:51 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/18 21:16:46 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_stack_node	*create_node(const char *str)
 	int				nbr;
 	t_stack_node	*new_node;
 
-	nbr = ft_atoi(str);
+	nbr = ft_atol(str);
 	new_node = malloc(sizeof(t_stack_node));
 	if (!new_node)
 		return (NULL);
@@ -53,7 +53,7 @@ void	init_node_a(t_push_swap *ps)
 	{
 		new_node = create_node(ps->argv[i]);// Create a new node from the argument
 		if (!new_node)
-			error(ERR_MEMORY);
+			return ;
 		new_node->next = ps->a; // Add the new node to the stack. The next pointer of the new node is set to the current top of the stack
 		if (ps->a)// If the stack is not empty, the previous pointer of the current top node is set to the new node
 			ps->a->prev = new_node;
