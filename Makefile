@@ -18,7 +18,6 @@ libft:
 	@make -C $(LIBFT)
 
 %.o : %.c
-#@echo "[$(NAME)] $(GREEN)Compiling $< into $@$(RESET)"
 	@$(CC) $(CCFLAGS) -o $@ -c $< $(HDRS)
 
 $(NAME): $(OBJS)
