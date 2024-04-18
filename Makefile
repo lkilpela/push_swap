@@ -23,7 +23,7 @@ libft:
 
 $(NAME): $(OBJS)
 	@$(CC) $(OBJS) $(LIBS) $(HDRS) -o $(NAME) -fsanitize=address
-	@echo "[$(NAME)] $(BLUE)Built target push_swap"
+	@echo "[$(NAME)] $(BLUE)Built target push_swap$(RESET)"
 
 clean:
 	@rm -rf $(OBJS)
