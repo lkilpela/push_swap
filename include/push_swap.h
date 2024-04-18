@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/17 22:20:34 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/18 21:19:28 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ enum	e_error
 	LAST_ERROR
 };
 
-typedef struct s_atoi
+typedef struct s_atol
 {
-	int	valid;
-	int	number;
-}				t_atoi;
+	int		valid;
+	long	number;
+}				t_atol;
 
 typedef struct s_stack_node
 {
@@ -106,7 +106,7 @@ void			rr(t_stack_node **a, t_stack_node **b, bool print);
 void			sort_three(t_stack_node **a);
 void			sort_stacks(t_stack_node **a, t_stack_node **b);
 //Utils
-t_atoi			check_atoi_overflow(const char *str);
+t_atol			check_atol_overflow(const char *str);
 t_stack_node	*find_max(t_stack_node *head);
 t_stack_node	*find_min(t_stack_node *head);
 bool			stack_sorted(t_stack_node *head);
