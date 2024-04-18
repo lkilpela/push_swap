@@ -23,7 +23,7 @@ libft:
 
 $(NAME): $(OBJS)
 	@$(CC) $(OBJS) $(LIBS) $(HDRS) -o $(NAME) -fsanitize=address
-	@echo "[$(NAME)] Built target push_swap"
+	@echo "[$(NAME)] $(BLUE)Built target push_swap"
 
 clean:
 	@rm -rf $(OBJS)
@@ -43,3 +43,4 @@ re: fclean all
 GREEN = \033[0;32m
 RED = \033[0;31m
 RESET = \033[0m
+BLUE = \033[34m
