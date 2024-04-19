@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:34:59 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/19 10:01:48 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/19 10:14:21 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,10 +92,11 @@ void	init_stack_a(t_stack_node **a, char **argv)
 	i = 0;
 	while (argv[i])
 	{
+		printf("argv[i]: %s\n", argv[i]);
 		error(is_not_int(argv[i]));
 		nbr = ft_atol(argv[i]);
 		error(nbr > INT_MAX || nbr < INT_MIN);
-		error(is_duplicate(argv[i], ft_strlen(argv[i])));
+		error((is_duplicate(argv[i], ft_strlen(argv[i]))));
 		append_node(a, argv[i]);		
 		i++;
 	}
