@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 13:22:40 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/19 11:57:22 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/19 12:02:47 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,16 @@ static void	reverse_both(t_stack_node **a, t_stack_node **b,
 
 static void	move_a_to_b(t_stack_node **a, t_stack_node **b)
 {
-	t_stack_node	*chepeast_node;
+	t_stack_node	*cheapest_node;
 
-	chepeast_node = get_cheapest(*a);
-	if (chepeast_node->above_median
-		&& chepeast_node->target_node->above_median)
-		rotate_both(a, b, chepeast_node);
-	else if (!(chepeast_node->above_median)
-		&& (!chepeast_node->target_node->above_median))
-		reverse_both(a, b, chepeast_node);
-	prep_push_a(a, chepeast_node);
+	cheapest_node= get_cheapest(*a);
+	if (cheapest_node->above_median
+		&& cheapest_node->target_node->above_median)
+		rotate_both(a, b, cheapest_node);
+	else if (!(cheapest_node->above_median)
+		&& (!cheapest_node->target_node->above_median))
+		reverse_both(a, b, cheapest_node);
+	prep_push_a(a, cheapest_node);
 	//prep_push_b(b, chepeast_node);
 	pb(b, a, false);
 }

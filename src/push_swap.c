@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 14:57:54 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/19 10:36:33 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/19 12:01:29 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,12 @@ int	main(int argc, char **argv)
 
 	a = NULL;
 	b = NULL;
-	ft_printf("argv[1]: %s\n", argv[1]);
-	ft_printf("argv[2]: %s\n", argv[2]);
 	error_if(argc == 1 || (argc == 2 && !argv[1][0]));
 	if (argc == 2)
 		argv = ft_split(argv[1], ' ');
 	else
 		argv = argv + 1;
 	init_stack_a(&a, argv);
-	ft_printf("init argv[1]: %s\n", argv[2]);
 	if (!stack_sorted(a))
 	{
 		if (stack_size(a) == 2)
