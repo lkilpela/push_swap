@@ -6,18 +6,16 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:01:14 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/18 21:32:07 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/19 08:47:52 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	error(int e)
+void	error(bool status)
 {
-	if (e >= 0 || e < LAST_ERROR)
-	{
+	if (status)
 		ft_putstr_fd("Error\n", STDERR_FILENO);
-	}
 	else
 		ft_putstr_fd ("Unknown error\n", STDERR_FILENO);
 	exit(EXIT_FAILURE);
