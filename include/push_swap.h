@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/18 21:19:28 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/19 08:48:49 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include <stdlib.h> // malloc, free, exit
 # include <stdio.h>
 
-enum	e_error
+/*enum	e_error
 {
 	ERR_NONE,
 	ERR_NOT_ENOUGH_ARG,
@@ -31,7 +31,7 @@ enum	e_error
 	ERR_DUPLICATE,
 	ERR_MEMORY,
 	LAST_ERROR
-};
+};*/
 
 typedef struct s_atol
 {
@@ -77,7 +77,7 @@ typedef struct s_push_swap
 
 //Handle errors
 int				validate_argument(t_push_swap *ps);
-void			error(int e);
+void			error(bool status);
 // argument initiation
 void			init_push_swap(int argc, char **argv, t_push_swap *ps);
 void			mark_median(t_stack_node *n);
