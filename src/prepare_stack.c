@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 12:22:30 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/17 21:09:35 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/19 11:53:47 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,24 +39,25 @@ t_stack_node	*get_cheapest(t_stack_node *head)
 	return (NULL);
 }
 
-void	prep_push(t_stack_node **head, t_stack_node *top, char stack_name)
+void	prep_push_a(t_stack_node **head, t_stack_node *cheapest_node)
 {
-	while (*head != top)
+	while (*head != cheapest_node)
 	{
-		if (stack_name == 'a')
-		{
-			if (top->above_median)
-				ra(head, false);
-			else
-				rra(head, false);
-		}
-		else if (stack_name == 'b')
-		{
-			if (top->above_median)
-				rb(head, false);
-			else
-				rrb(head, false);
-		}
+		if (cheapest_node->above_median)
+			ra(head, false);
+		else
+			rra(head, false);
+	}
+}
+
+void	prep_push_b(t_stack_node **head, t_stack_node *cheapest_node)
+{
+	while (*head != cheapest_node)
+	{
+		if (cheapest_node->above_median)
+			rb(head, false);
+		else
+			rrb(head, false);
 	}
 }
 

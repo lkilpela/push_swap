@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 13:22:40 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/19 10:54:57 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/19 11:57:22 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,14 @@ static void	move_a_to_b(t_stack_node **a, t_stack_node **b)
 	else if (!(chepeast_node->above_median)
 		&& (!chepeast_node->target_node->above_median))
 		reverse_both(a, b, chepeast_node);
-	prep_push(a, chepeast_node, 'a');
-	prep_push(b, chepeast_node, 'b');
+	prep_push_a(a, chepeast_node);
+	//prep_push_b(b, chepeast_node);
 	pb(b, a, false);
 }
 
 static void	move_b_to_a(t_stack_node **a, t_stack_node **b)
 {
-	prep_push(a, (*b)->target_node, 'a');
+	prep_push_a(a, (*b)->target_node);
 	pa(a, b, false);
 }
 

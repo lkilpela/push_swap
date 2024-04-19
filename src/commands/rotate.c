@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 17:54:57 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/19 10:44:46 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/19 12:00:33 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,10 @@ static void	rotate(t_stack_node **head)
 	if (!*head || !(*head)->next)
 		return ;
 	last_node = stack_last(*head);
-	ft_printf("last_node: %d\n", last_node->nbr);
 	last_node->prev->next = NULL; // Detach last node from end of list
 	last_node->next = *head;
 	(*head)->prev = last_node;
 	(*head) = last_node;
-	ft_printf("head: %d\n", (*head)->nbr);
 	(*head)->prev = NULL;
 }
 
