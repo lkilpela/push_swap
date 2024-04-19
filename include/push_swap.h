@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/19 11:54:14 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/19 15:42:02 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,8 @@ void			error_if(bool status);
 void			mark_median(t_stack_node *n);
 //Stack preparation
 t_stack_node	*get_cheapest(t_stack_node *head);
-void			prep_push_a(t_stack_node **head, t_stack_node *top);
-void			prep_push_b(t_stack_node **head, t_stack_node *top);
+void			prep_push(t_stack_node **head, t_stack_node *cheapest_node,
+				char stack_name);
 void			min_on_top(t_stack_node **a);
 //Nodes initiation
 void			init_stack_a(t_stack_node **a, char **argv);
