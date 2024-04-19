@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:34:59 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/19 09:41:46 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/19 10:01:48 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,18 +69,34 @@ t_stack_node	*create_node(const char *str)
 	return (new_node);
 }
 
+static void	append_node(t_stack_node **a, char *str)
+{
+	t_stack_node	*new_node;
+	t_stack_node	*last_node;
+
+	new_node = create_node(str);
+	if ((*a) != NULL)
+	{
+		last_node = stack_last(*a);
+		last_node->next = new_node;
+		new_node->prev = last_node;
+	}
+	else
+		*a = new_node;
+}
 void	init_stack_a(t_stack_node **a, char **argv)
 {
 	int		i;
-	long	n;
+	long	nbr;
 
-	i = 1;
+	i = 0;
 	while (argv[i])
 	{
 		error(is_not_int(argv[i]));
-		n = ft_atol(argv[i]);
-		error(n > INT_MAX || n < INT_MIN);
+		nbr = ft_atol(argv[i]);
+		error(nbr > INT_MAX || nbr < INT_MIN);
 		error(is_duplicate(argv[i], ft_strlen(argv[i])));
+		append_node(a, argv[i]);		
 		i++;
 	}
 }

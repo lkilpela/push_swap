@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 14:57:54 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/19 09:37:56 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/19 10:03:50 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	main(int argc, char **argv)
 	a = NULL;
 	b = NULL;
 	error(argc = 1 || (argc == 2 && !argv[1][0]));
+	if (argc == 2)
+		argv = ft_split(argv[1], ' ');
 	init_stack_a(&a, argv + 1);
 	if (!stack_sorted(a))
 	{
@@ -30,6 +32,6 @@ int	main(int argc, char **argv)
 		else
 			sort_stacks(&a, &b);
 	}
-	stack_clear(&pa);
+	stack_clear(&a);
 	return (0);
 }
