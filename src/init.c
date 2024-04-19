@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:34:59 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/19 14:16:24 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/19 14:26:55 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,5 +99,4 @@ void	init_stack_a(t_stack_node **a, char **argv)
 		append_node(a, argv[i]);
 		i++;
 	}
-	free_ptrs(argv);
 }
