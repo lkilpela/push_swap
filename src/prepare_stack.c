@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 12:22:30 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/19 15:48:35 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/19 22:10:51 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ bool node_in_stack(t_stack_node *head, t_stack_node *node)
 
 void	prep_push(t_stack_node **head, t_stack_node *cheapest_node, char stack_name)
 {
-	if (!node_in_stack(*head, cheapest_node))
-        return;  // Return immediately if cheapest_node is not in the stack
+	//if (!node_in_stack(*head, cheapest_node))
+       // return;  // Return immediately if cheapest_node is not in the stack
 	while (*head != cheapest_node)
 	{
 		if (stack_name == 'a')
