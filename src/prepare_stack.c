@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 12:22:30 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/19 15:40:59 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/19 15:48:35 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,24 @@ t_stack_node	*get_cheapest(t_stack_node *head)
 	return (NULL);
 }
 
+bool node_in_stack(t_stack_node *head, t_stack_node *node)
+{
+    t_stack_node *current = head;
+
+    while (current != NULL)
+    {
+        if (current == node)
+            return true;
+        current = current->next;
+    }
+
+    return false;
+}
+
 void	prep_push(t_stack_node **head, t_stack_node *cheapest_node, char stack_name)
 {
+	if (!node_in_stack(*head, cheapest_node))
+        return;  // Return immediately if cheapest_node is not in the stack
 	while (*head != cheapest_node)
 	{
 		if (stack_name == 'a')
