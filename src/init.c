@@ -6,13 +6,13 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:34:59 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/18 21:16:46 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/19 09:02:12 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	init_push_swap(int argc, char **argv, t_push_swap *ps)
+/*void	init_push_swap(int argc, char **argv, t_push_swap *ps)
 {
 	ps->argc = argc;
 	ps->argv = argv;
@@ -20,7 +20,7 @@ void	init_push_swap(int argc, char **argv, t_push_swap *ps)
 	ps->tab = NULL;
 	ps->a = NULL;
 	ps->b = NULL;
-}
+}*/
 
 // Function to create a new node from a string and add it to the stack
 t_stack_node	*create_node(const char *str)
@@ -43,21 +43,18 @@ t_stack_node	*create_node(const char *str)
 	return (new_node);
 }
 
-void	init_node_a(t_push_swap *ps)
+void	init_stack_a(t_stack_node **a, char **argv)
 {
-	int				i;
-	t_stack_node	*new_node;
+	int		i;
+	long	n;
 
 	i = 1;
-	while (i < ps->argc)
+	while (argv[i])
 	{
-		new_node = create_node(ps->argv[i]);// Create a new node from the argument
-		if (!new_node)
-			return ;
-		new_node->next = ps->a; // Add the new node to the stack. The next pointer of the new node is set to the current top of the stack
-		if (ps->a)// If the stack is not empty, the previous pointer of the current top node is set to the new node
-			ps->a->prev = new_node;
-		ps->a = new_node; // The top of the stack is updated to be the new node
+		error(argv[i][0] == '\0');
+		n = ft_atol(argv[i]);
+		error(n > INT_MAX || n < INT_MIN);
+		error(is_duplicate(argv[i]));
 		i++;
 	}
 }

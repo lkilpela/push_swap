@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:02:10 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/18 21:46:31 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/19 09:03:43 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,51 +56,38 @@ static int	is_not_int(const char *str)
 	return (!has_digit);
 }
 
-static void	validate_single_argument(t_push_swap *ps)
+static void	validate_single_argument(char *str)
 {
 	t_atol	check;
 
-	if (is_not_int(ps->arg))
-		error(ERR_FORMAT);
-	check = check_atol_overflow(ps->arg);
-	if (check.valid == 1)
-		error(ERR_INT_OVERFLOW);
-	is_duplicate(ps);
+	error(is_not_int(str));
+	check = check_atol_overflow(str);
+	error(check.valid == 1);
+	
 }
 
-int	validate_argument(t_push_swap *ps)
+void	validate_argument(int argc, char **argv)
 {
 	int		i;
 	int		j;
-	long	n;
+	char	**tab;
 
-	if (ps->argc >= 2)
+	if (argc = 2)
 	{
 		i = 1;
-		while (i < ps->argc)
+		while (i < argc)
 		{
-			if (ps->argv[i][0] == '\0')
-				error(ERR_EMPTY_ARG);
-			n = ft_atol(ps->argv[i]);
-			if (n > INT_MAX || n < INT_MIN)
-				error(ERR_INT_OVERFLOW);
-			//if (is_not_int(ps->argv[i]))
-				//error(ERR_FORMAT);
-			ps->tab = ft_split(ps->argv[i], ' ');
-			if (!ps->tab)
+			tab = ft_split(argv[i], ' ');
+			if (!tab)
 				return (0);
 			j = 0;
-			while (ps->tab[j])
+			while (tab[j])
 			{
-				ps->arg = ps->tab[j];
-				validate_single_argument(ps);
+				validate_single_argument(tab[j]);
 				j++;
 			}
-			free_ptrs(ps->tab);
+			free_ptrs(tab);
 			i++;
 		}
 	}
-	else
-		error(ERR_NOT_ENOUGH_ARG);
-	return (0);
 }

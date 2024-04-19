@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/19 08:48:49 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/19 08:59:27 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ typedef struct s_stack_node
 								//linked list
 }				t_stack_node;
 
-typedef struct s_push_swap
+/*typedef struct s_push_swap
 {
 	char		**argv;
 	char		*arg;
@@ -72,14 +72,14 @@ typedef struct s_push_swap
 	char		**tab;
 	t_stack_node *a;
 	t_stack_node *b;
-}			t_push_swap;
+}			t_push_swap;*/
 
 
 //Handle errors
-int				validate_argument(t_push_swap *ps);
+int				validate_argument(int argc, char **argv);
 void			error(bool status);
 // argument initiation
-void			init_push_swap(int argc, char **argv, t_push_swap *ps);
+//void			init_push_swap(int argc, char **argv);
 void			mark_median(t_stack_node *n);
 //Stack preparation
 t_stack_node	*get_cheapest(t_stack_node *head);
@@ -87,7 +87,7 @@ void			prep_push(t_stack_node **head, t_stack_node *top,
 					char stack_name);
 void			min_on_top(t_stack_node **a);
 //Nodes initiation
-void			init_node_a(t_push_swap *ps);
+void			init_stack_a(t_stack_node **a, char **argv);
 void			prepare_nodes_a(t_stack_node *a, t_stack_node *b);
 void			prepare_nodes_b(t_stack_node *a, t_stack_node *b);
 //Commands
