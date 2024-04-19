@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:34:59 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/19 09:39:45 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/19 09:40:20 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ bool	is_duplicate(char *str, int count)
 		j = i + 1;
 		while (j < count)
 		{
-			if (ft_atoi(str[i]) == ft_atoi(str[j]))
+			if (ft_atol(str[i]) == ft_atol(str[j]))
 				return (true) ;
 			j++;
 		}
