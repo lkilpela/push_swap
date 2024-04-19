@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 20:28:24 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/17 20:53:42 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/19 10:42:06 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ static void	set_cheapest(t_stack_node *head)
 	cheapest_node->cheapest = true;
 }
 
-void	prepare_nodes_a(t_stack_node *a, t_stack_node *b)
+void	prepare_stack_a(t_stack_node *a, t_stack_node *b)
 {
 	mark_median(a);
 	mark_median(b);
