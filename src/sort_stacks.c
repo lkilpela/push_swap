@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 13:22:40 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/19 10:42:54 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/19 10:54:57 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,13 +68,13 @@ void	sort_stacks(t_stack_node **a, t_stack_node **b)
 		pa(b, a, false);
 	while (size_a-- > 3 && !stack_sorted(*a))
 	{
-		prepare_stack_a(*a, *b);
+		prepare_nodes_a(*a, *b);
 		move_a_to_b(a, b);
 	}
 	sort_three(a);
 	while (*b)
 	{
-		prepare_stack_b(*a, *b);
+		prepare_nodes_b(*a, *b);
 		move_b_to_a(a, b);
 	}
 	mark_median(*a);
