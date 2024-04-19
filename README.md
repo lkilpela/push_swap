@@ -65,6 +65,9 @@ Each `[ nbr | index | push_cost | above_median | cheapest | target_node | prev |
 2. Navigate into the project directory: `cd push_swap`
 3. Compile the project: `make`
 
+### Tester
+
+https://github.com/Tempest989/42_Push_Swap_Tester
 
 ### 🕹️ How it works
 
