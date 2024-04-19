@@ -6,11 +6,26 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 14:57:54 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/19 14:28:44 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/19 14:45:43 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+char	**prepare_argv(int argc, char **argv)
+{
+	char	**argv_split;
+
+	argv_split = NULL;
+	error_if(argc == 1 || (argc == 2 && !argv[1][0]));
+	if (argc == 2)
+	{
+		argv_split = ft_split(argv[1], ' ');
+		return (argv_split);
+	}
+	else
+		return NULL;
+}
 
 int	main(int argc, char **argv)
 {
@@ -20,13 +35,9 @@ int	main(int argc, char **argv)
 
 	a = NULL;
 	b = NULL;
-	argv_split = NULL;
-	error_if(argc == 1 || (argc == 2 && !argv[1][0]));
-	if (argc == 2)
-	{
-		argv_split = ft_split(argv[1], ' ');
+	argv_split = prepare_argv(argc, argv);
+	if (argv_split)
 		argv = argv_split;
-	}
 	else
 		argv = argv + 1;
 	init_stack_a(&a, argv);
