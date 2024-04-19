@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 14:57:54 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/19 09:34:03 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/19 09:37:56 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	main(int argc, char **argv)
 
 	a = NULL;
 	b = NULL;
+	error(argc = 1 || (argc == 2 && !argv[1][0]));
 	init_stack_a(&a, argv + 1);
 	if (!stack_sorted(a))
 	{
