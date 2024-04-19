@@ -6,54 +6,46 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:02:10 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/19 09:03:43 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/19 09:23:51 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	is_duplicate(t_push_swap *ps)
+bool	is_duplicate(int *number, int count)
 {
-	int	flg;
 	int	i;
 	int	j;
 
-	flg = 0;
-	i = 1;
-	while (i < ps->argc)
+	i = 0;
+	while (i < count)
 	{
 		j = i + 1;
-		while (j < ps->argc && !flg)
+		while (j < count)
 		{
-			if (ft_atol(ps->argv[i]) == ft_atol(ps->argv[j]))
-				flg = 1;
+			if (number[i] == number[j])
+				return (true) ;
 			j++;
 		}
 		i++;
 	}
-	if (flg)
-		error(ERR_DUPLICATE);
+	return (false);
 }
 
-/* returns 1, the string contains an alphabetic character. 
-returns 0, the string does not contain any alphabetic characters.*/
-static int	is_not_int(const char *str)
+bool	is_not_int(char *str)
 {
-	int		has_digit;
-
-	has_digit = 0;
-	while (ft_isspace(*str))
-		str++;
-	if (*str == '-' || *str == '+')
-		str++;
+	if (!(*str == '+' || *str == '-' || ft_isdigit(*str)))
+		return (true);
+	if ((*str == '+' || *str == '-') && !ft_isdigit(*(str + 1)))
+		return (true);
+	str++;
 	while (*str)
 	{
 		if (!ft_isdigit(*str))
-			return (1);
-		has_digit = 1;
+			return (true);
 		str++;
 	}
-	return (!has_digit);
+	return (false);
 }
 
 static void	validate_single_argument(char *str)
