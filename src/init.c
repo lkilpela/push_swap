@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:34:59 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/19 10:19:12 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/19 10:31:26 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,14 @@ void	init_stack_a(t_stack_node **a, char **argv)
 	long	nbr;
 
 	i = 0;
+	printf("Address of a: %p\n", (void *)a);
+    printf("Value of a: %p\n", (void *)*a);
+
+    printf("Address of argv: %p\n", (void *)argv);
+    for (int i = 0; argv[i] != NULL; i++)
+    {
+        printf("argv[%d]: %s\n", i, argv[i]);
+    }
 	while (argv[i])
 	{
 		error_if(is_not_int(argv[i]));
