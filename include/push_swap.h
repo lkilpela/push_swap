@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/19 08:59:27 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/19 09:34:39 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ typedef struct s_stack_node
 
 
 //Handle errors
-int				validate_argument(int argc, char **argv);
+//int				validate_argument(int argc, char **argv);
 void			error(bool status);
 // argument initiation
 //void			init_push_swap(int argc, char **argv);

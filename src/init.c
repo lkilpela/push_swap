@@ -6,21 +6,47 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:34:59 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/19 09:02:12 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/19 09:28:29 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*void	init_push_swap(int argc, char **argv, t_push_swap *ps)
+bool	is_duplicate(int *number, int count)
 {
-	ps->argc = argc;
-	ps->argv = argv;
-	ps->arg = NULL;
-	ps->tab = NULL;
-	ps->a = NULL;
-	ps->b = NULL;
-}*/
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < count)
+	{
+		j = i + 1;
+		while (j < count)
+		{
+			if (number[i] == number[j])
+				return (true) ;
+			j++;
+		}
+		i++;
+	}
+	return (false);
+}
+
+bool	is_not_int(char *str)
+{
+	if (!(*str == '+' || *str == '-' || ft_isdigit(*str)))
+		return (true);
+	if ((*str == '+' || *str == '-') && !ft_isdigit(*(str + 1)))
+		return (true);
+	str++;
+	while (*str)
+	{
+		if (!ft_isdigit(*str))
+			return (true);
+		str++;
+	}
+	return (false);
+}
 
 // Function to create a new node from a string and add it to the stack
 t_stack_node	*create_node(const char *str)
@@ -52,9 +78,10 @@ void	init_stack_a(t_stack_node **a, char **argv)
 	while (argv[i])
 	{
 		error(argv[i][0] == '\0');
+		error(is_not_int(argv[i]));
 		n = ft_atol(argv[i]);
 		error(n > INT_MAX || n < INT_MIN);
-		error(is_duplicate(argv[i]));
+		error(is_duplicate(argv[i], ft_strlen(argv[i])));
 		i++;
 	}
 }
