@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 13:22:40 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/19 15:47:19 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/20 14:58:56 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static void	move_a_to_b(t_stack_node **a, t_stack_node **b)
 
 static void	move_b_to_a(t_stack_node **a, t_stack_node **b)
 {
-	prep_push(b, (*b)->target_node, 'b');
+	prep_push(a, (*b)->target_node, 'b');
 	pa(a, b, false);
 }
 
