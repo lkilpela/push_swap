@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 12:22:30 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/20 15:17:41 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/20 15:29:36 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,26 +40,29 @@ t_stack_node	*get_cheapest(t_stack_node *head)
 }
 
 // rotate a stack until a specific node (cheapest_node) is at the top of stack.
-void	prep_push(t_stack_node **head, t_stack_node *top, char stack_name)
+void	prep_push(t_stack_node **head, t_stack_node *node, char stack_name)
 {
-	if (*head == top)
-		return ;
-	while (*head != top)
+	t_stack_node *initial_head = *head;
+
+	while ((*head)!= node)
 	{
 		if (stack_name == 'a')
 		{
-			if (top->above_median)
+			if (node->above_median)
 				ra(head, false);
 			else
 				rra(head, false);
 		}
 		else if (stack_name == 'b')
 		{
-			if (top->above_median)
+			if (node->above_median)
 				rb(head, false);
 			else
 				rrb(head, false);
 		}
+		// Exit the loop if the stack has been fully rotated
+		if (*head == initial_head)
+			break;
 	}
 }
 
