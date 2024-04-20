@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 23:48:07 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/20 23:48:15 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/20 23:54:06 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	is_duplicate(t_stack *s)
 	return (1);
 }
 
-bool	is_not_int(char *str)
+int	is_not_int(char *str)
 {
 	if (!(*str == '+' || *str == '-' || ft_isdigit(*str)))
 		return (true);
@@ -42,10 +42,10 @@ bool	is_not_int(char *str)
 	while (*str)
 	{
 		if (!ft_isdigit(*str))
-			return (true);
+			return (0);
 		str++;
 	}
-	return (false);
+	return (1);
 }
 
 void	build_stack(t_stack *s, char **argv)
