@@ -6,16 +6,16 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 14:18:43 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/19 10:23:24 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/20 17:36:07 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 // Search a stack and returns the node with the biggest number
-t_stack_node	*find_max(t_stack_node *head)
+t_stack	*find_max(t_stack *head)
 {
 	long			max;
-	t_stack_node	*max_node;
+	t_stack	*max_node;
 
 	if (!head)
 		return (NULL);
@@ -34,10 +34,10 @@ t_stack_node	*find_max(t_stack_node *head)
 }
 
 // Search a stack and returns the node with the smallest number
-t_stack_node	*find_min(t_stack_node *head)
+t_stack	*find_min(t_stack *head)
 {
 	long			min;
-	t_stack_node	*min_node;
+	t_stack	*min_node;
 
 	if (!head)
 		return (NULL);
@@ -54,7 +54,7 @@ t_stack_node	*find_min(t_stack_node *head)
 	return (min_node);
 }
 
-int	stack_size(t_stack_node *head)
+int	stack_size(t_stack *head)
 {
 	int	i;
 
@@ -69,7 +69,7 @@ int	stack_size(t_stack_node *head)
 	return (i);
 }
 
-t_stack_node	*stack_last(t_stack_node *head)
+t_stack	*stack_last(t_stack *head)
 {
 	if (!head)
 		return (NULL);

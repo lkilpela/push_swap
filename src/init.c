@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:34:59 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/19 14:26:55 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/20 17:36:30 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,13 @@ bool	is_not_int(char *str)
 }
 
 // Function to create a new node from a string and add it to the stack
-t_stack_node	*create_node(const char *str)
+t_stack	*create_node(const char *str)
 {
 	int				nbr;
-	t_stack_node	*new_node;
+	t_stack	*new_node;
 
 	nbr = ft_atol(str);
-	new_node = malloc(sizeof(t_stack_node));
+	new_node = malloc(sizeof(t_stack));
 	if (!new_node)
 		return (NULL);
 	new_node->nbr = nbr;
@@ -69,10 +69,10 @@ t_stack_node	*create_node(const char *str)
 	return (new_node);
 }
 
-static void	append_node(t_stack_node **a, char *str)
+static void	append_node(t_stack **a, char *str)
 {
-	t_stack_node	*new_node;
-	t_stack_node	*last_node;
+	t_stack	*new_node;
+	t_stack	*last_node;
 
 	new_node = create_node(str);
 	if ((*a) != NULL)
@@ -84,7 +84,7 @@ static void	append_node(t_stack_node **a, char *str)
 	else
 		*a = new_node;
 }
-void	init_stack_a(t_stack_node **a, char **argv)
+void	init_stack_a(t_stack **a, char **argv)
 {
 	int		i;
 	long	nbr;

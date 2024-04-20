@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 13:22:40 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/20 16:41:01 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/20 17:23:59 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static void	move_a_to_b(t_stack_node **a, t_stack_node **b)
 		&& (!cheapest_node->target_node->above_median))
 		reverse_both(a, b, cheapest_node);
 	prep_push(a, cheapest_node, 'a');
-	prep_push(b, cheapest_node, 'b');
+	//prep_push(b, cheapest_node, 'b');
 	pb(b, a, false);
 }
 
@@ -60,22 +60,30 @@ static void	move_b_to_a(t_stack_node **a, t_stack_node **b)
 void	sort_stacks(t_stack_node **a, t_stack_node **b)
 {
 	int	size_a;
+	int	size_b;
+	t_stack_node *min_node;
 
 	size_a = stack_size(*a);
 	if (size_a-- > 3 && !stack_sorted(*a))
 		pa(b, a, false);
 	if (size_a-- > 3 && !stack_sorted(*a))
 		pa(b, a, false);
+	if (size_b == 2 && !stack_sorted(*a))
+		rb(b, false);
+	pb(b, a, false);
 	while (size_a-- > 3 && !stack_sorted(*a))
 	{
-		prepare_nodes_a(*a, *b);
-		move_a_to_b(a, b);
+		//prepare_nodes_a(*a, *b);
+		//move_a_to_b(a, b);
+		//if the top number is the smallest in stack a, rotate it.
+		if ((*a)->nbr == find_min(*a))
+			ra(a, false);
 	}
 	sort_three(a);
 	while (*b)
 	{
-		prepare_nodes_b(*a, *b);
-		move_b_to_a(a, b);
+		//prepare_nodes_b(*a, *b);
+		//move_b_to_a(a, b);
 	}
 	mark_median(*a);
 	min_on_top(a);

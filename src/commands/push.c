@@ -6,13 +6,13 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 12:48:34 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/14 15:46:59 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/20 17:36:38 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void ft_dlstadd_front(t_stack_node **lst, t_stack_node *new)
+static void ft_dlstadd_front(t_stack **lst, t_stack *new)
 {
 	if (new)
 	{
@@ -23,9 +23,9 @@ static void ft_dlstadd_front(t_stack_node **lst, t_stack_node *new)
 	}
 }
 
-static void push(t_stack_node **dst, t_stack_node **src)
+static void push(t_stack **dst, t_stack **src)
 {
-	t_stack_node	*push_node;
+	t_stack	*push_node;
 
 	if (!*src)
 		return;
@@ -37,7 +37,7 @@ static void push(t_stack_node **dst, t_stack_node **src)
 }
 
 // Move the top node from stack b to stack a
-void	pa(t_stack_node **a, t_stack_node **b, bool print)
+void	pa(t_stack **a, t_stack **b, bool print)
 {
 	push(a, b);
 	if (!print)
@@ -45,7 +45,7 @@ void	pa(t_stack_node **a, t_stack_node **b, bool print)
 }
 
 // Move the top node from stack a to stack b
-void	pb(t_stack_node **b, t_stack_node **a, bool print)
+void	pb(t_stack **b, t_stack **a, bool print)
 {
 	push(b, a);
 	if (!print)

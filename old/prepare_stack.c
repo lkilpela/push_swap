@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 12:22:30 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/20 16:37:59 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/20 16:59:01 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	prep_push(t_stack_node **head, t_stack_node *node, char stack_name)
 		else if (stack_name == 'b')
 		{
 			if (node->above_median)
-				rb(head, false);
+				rb(head, false);              
 			else
 				rrb(head, false);
 		}

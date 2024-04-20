@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 14:57:54 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/19 15:55:51 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/20 17:36:16 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ char	**prepare_argv(int argc, char **argv)
 
 int	main(int argc, char **argv)
 {
-	t_stack_node	*a;
-	t_stack_node	*b;
+	t_stack	*a;
+	t_stack	*b;
 	char			**argv_split;
 
 	a = NULL;
