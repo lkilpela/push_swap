@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 12:22:30 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/19 22:10:51 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/20 15:17:41 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,36 +39,23 @@ t_stack_node	*get_cheapest(t_stack_node *head)
 	return (NULL);
 }
 
-bool node_in_stack(t_stack_node *head, t_stack_node *node)
+// rotate a stack until a specific node (cheapest_node) is at the top of stack.
+void	prep_push(t_stack_node **head, t_stack_node *top, char stack_name)
 {
-    t_stack_node *current = head;
-
-    while (current != NULL)
-    {
-        if (current == node)
-            return true;
-        current = current->next;
-    }
-
-    return false;
-}
-
-void	prep_push(t_stack_node **head, t_stack_node *cheapest_node, char stack_name)
-{
-	//if (!node_in_stack(*head, cheapest_node))
-       // return;  // Return immediately if cheapest_node is not in the stack
-	while (*head != cheapest_node)
+	if (*head == top)
+		return ;
+	while (*head != top)
 	{
 		if (stack_name == 'a')
 		{
-			if (cheapest_node->above_median)
+			if (top->above_median)
 				ra(head, false);
 			else
 				rra(head, false);
 		}
 		else if (stack_name == 'b')
 		{
-			if (cheapest_node->above_median)
+			if (top->above_median)
 				rb(head, false);
 			else
 				rrb(head, false);
