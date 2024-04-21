@@ -6,6 +6,8 @@
         "random": "c",
         "__node_handle": "c",
         "push_swap.h": "c",
-        "regex": "c"
+        "regex": "c",
+        "variant": "c",
+        "chrono": "c"
     }
 }

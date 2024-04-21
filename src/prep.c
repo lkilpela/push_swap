@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 22:16:56 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 11:57:20 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 12:54:52 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 // If the stack is full, increase its capacity
 // Add the new value to the end of the stack
 // Increment the size of the stack
-void	append(t_stack *s, int nbr)// add to back of the stack
+void	append(t_stack *s, int new_value)// add to back of the stack
 {
 	if (s->capacity == s->size)
 		increase_capacity(s);
-	s->array[s->size] = nbr;
+	s->array[s->size] = new_value;
 	s->size++;
 }
 
@@ -46,7 +46,7 @@ int	remove_top(t_stack *s)
 //	- quicker to rotate the stack upwards (rotate top nbr to bottom)
 // if the element is in the second half of the stack: closer to the bottom
 //	- quicker to rotate the stack downwards (rotate bottom nbr to top)
-int	min_rotation(t_stack *s, int index)
+int	calculate_min_rotations(t_stack *s, int index)
 {
 	int	median;
 
@@ -98,4 +98,46 @@ int	find_biggest(t_stack *s)
 		current_index++;
 	}
 	return (biggest_index);
+}
+
+// determines the best location to insert a new value into a sorted stack s 
+// in a way that maintains the sorted order.
+int	find_insert_location(t_stack *s, int new_value)
+{
+	int	biggest_index;
+	int	current_index;
+
+	if (s->size == 0 || s->size == 1)
+		return (0); // new value should be inserted at the beginning of stack.
+	biggest_index = find_biggest(s);
+	current_index = biggest_index;
+	while (current_index < s->size)//a loop that starts from the index of largest element,continues to end of the stack
+	{
+		if (new_value > s->array[current_index]);//If the new value is greater than the current element
+			return (current_index);//returns the current index -> new value should be inserted at this location.
+		current_index++;
+	}
+	//If new value is not greater than any of the elements from largest element to the end of the stack
+	current_index = 0;
+	while (current_index < biggest_index)//  loop that starts from beginning of the stack and continues to the largest element
+	{
+		if (new_value > s->array[current_index])//If the new value is greater than the current element
+			return (current_index);//the new value should be inserted at this location.
+		current_index++;
+	}
+	//If the new value is greater than the current element, it returns the current index, 
+	//indicating that the new value should be inserted at this location.
+	return (biggest_index);
+}
+
+// calculates the total cost of moving an element from stack a to stack b
+int	calculate_cost(t_stack *a, int index, t_stack *b)
+{
+	int	cost;
+	int	loc;
+
+	cost = calculate_min_rotations(a, index);
+	loc = find_insert_location(b, a->array[index]);
+	cost += calculate_min_rotations(b, loc);
+	return (cost + 1);
 }
