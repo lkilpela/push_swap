@@ -6,13 +6,13 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 23:48:07 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 14:33:54 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 17:20:30 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_duplicate(t_stack *s)
+static int	is_duplicate(t_stack *s)
 {
 	int	i;
 	int	j;
@@ -32,7 +32,7 @@ int	is_duplicate(t_stack *s)
 	return (1);
 }
 
-int	is_not_int(char *str)
+static int	is_not_int(char *str)
 {
 	if (!(*str == '+' || *str == '-' || ft_isdigit(*str)))
 		return (true);
