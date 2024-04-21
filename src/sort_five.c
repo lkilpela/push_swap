@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 23:35:42 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 23:38:55 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 23:45:41 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,73 +29,84 @@ void	size4(t_stack *s)
 			sa(s);
 			pb(s);
 		}
-		if (s[0] > s[2] && s[1] > s[2] && s[2] < s[3] && d->sia == 4)
+		if (a > c && b > c && c < d && s->size == 4)
 		{
-			ra(d);
-			sa(d->sa);
-			pb(d);
+			ra(s);
+			sa(s);
+			pb(s);
 		}
-		if (s[0] > s[3] && s[1] > s[3] && s[2] > s[3] && d->sia == 4)
+		if (a > c && b > d && c > d && s->size == 4)
 		{
-			rra(d);
-			pb(d);
+			rra(s);
+			pb(s);
 		}
 	}
-	if (d->sia == 3)
-		size3(d->sa, d);
-	pa(d);
+	if (s->size == 3)
+		sort_three(s);
+	pa(s);
 }
 
-int	size5_2(int *s, t_list *d, int i)
+int	size5_2(t_stack *s, int i)
 {
-	if (s[0] > s[2] && s[1] > s[2] && s[2] < s[3] && s[2] < s[4] && i == 0)
+    int a = s->array[0];
+    int b = s->array[1];
+    int c = s->array[2];
+    int d = s->array[3];
+    int e = s->array[4];
+
+	if (a > c && b > c && c < d && c < e && i == 0)
 	{
-		ra(d);
-		sa(d->sa);
-		pb(d);
+		ra(s);
+		sa(s);
+		pb(s);
 		i++;
 	}
-	if (s[0] > s[3] && s[1] > s[3] && s[2] > s[3] && s[3] < s[4] && i == 0)
+	if (a > d && b > d && c > d && d < e && i == 0)
 	{
-		rra(d);
-		rra(d);
-		pb(d);
+		rra(s);
+		rra(s);
+		pb(s);
 		i++;
 	}
-	if (s[0] > s[4] && s[1] > s[4] && s[2] > s[4] && s[3] > s[4] && i == 0)
+	if (a > e && b > e && c > e && d > e && i == 0)
 	{
-		rra(d);
-		pb(d);
+		rra(s);
+		pb(s);
 		i++;
 	}
 	return (i);
 }
 
-void	size5(int *s, t_list *d)
+void	size5(t_stack *s)
 {
 	int	i;
+    int a = s->array[0];
+    int b = s->array[1];
+    int c = s->array[2];
+    int d = s->array[3];
+    int e = s->array[4];
 
 	i = 0;
-	if (d->sia == 5)
+	if (s->size == 5)
 	{
-		if (s[0] < s[1] && s[0] < s[2] && s[0] < s[3] && s[0] < s[4] && i == 0)
+		if (a < b && a < c && a < d && a < e && i == 0)
 		{
-			pb(d);
+			pb(s);
 			i++;
 		}
-		if (s[0] > s[1] && s[1] < s[2] && s[1] < s[3] && s[1] < s[4] && i == 0)
+		if (a > b && b < c && b < d && b < e && i == 0)
 		{
-			sa(d->sa);
-			pb(d);
+			sa(s);
+			pb(s);
 			i++;
 		}
-		i = size5_2(d->sa, d, i);
+		i = size5_2(s, d, i);
 	}
-	size4(d->sa, d);
+	size4(s);
 	if (i == 1)
 	{
-		pa(d);
-		if (s[0] > s[1])
-			sa(d->sa);
+		pa(s);
+		if (a > b)
+			sa(s);
 	}
 }
