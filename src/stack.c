@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 23:48:07 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 19:37:27 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 20:07:22 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 static void	is_not_int(char *str)
 {
-	printf("str: %s\n", str);
 	if (!(*str == '+' || *str == '-' || ft_isdigit(*str)))
 	{
 		ft_printf("Error\n");
@@ -61,10 +60,18 @@ static void	is_duplicate(t_stack *s)
 
 void	build_stack(t_stack *s, char **argv)
 {
+	long nbr;
+
 	while (*argv)
 	{
 		is_not_int(*argv);
-		push_to_back(s, ft_atol(*argv));
+		nbr = ft_atol(*argv);
+		if (nbr > INT_MAX || nbr < INT_MIN)
+		{
+			ft_printf("Error\n");
+			exit(1);
+		}
+		push_to_back(s, nbr);
 		argv++;
 	}
 	is_duplicate(s);
