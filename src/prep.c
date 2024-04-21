@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 22:16:56 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 13:03:17 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 13:43:26 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,3 +148,32 @@ int	calculate_ops(t_stack *a, int index, t_stack *b)
 	return (min_op + 1);
 }
 
+// direction: index is less than half the size of stack -> rotate to bottom
+// otherwise -> reverse rotate to top
+int	rotate_direction(t_stack *s, int index)
+{
+	if (index < s->size / 2) // above median
+		return (0);
+	return (1);
+}
+
+void	rotate_stack(char *name, t_stack *a, int i, int moves)
+{
+	int	j;
+
+	j = 0;
+	while (j != moves)
+	{
+		if (rotate_direction(a, i))
+		{
+			ft_printf("rr%s\n", name);
+			reverse_rotate(a);
+		}
+		else
+		{
+			ft_printf("r%s\n", name);
+			rotate(a);
+		}
+		j++;
+	}
+}
