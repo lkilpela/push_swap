@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 22:56:46 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 23:32:31 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 23:32:54 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,19 +43,3 @@ void	sort_three(t_stack* s)
     else if (a < b && a > c)   // case 5: [2,3,1]
         rra(s);
 }
-
-
-	/*if (s->array[0] > s->array[1])
-		swap(s);
-	if (s->array[1] > s->array[2])
-	{
-		reverse_rotate(s);
-		ft_printf("rra\n");
-	}
-	if (s->array[0] > s->array[1])
-		swap(s);
-	if (s->array[0] == find_biggest(s))
-	{
-		reverse_rotate(s);
-		ft_printf("rra\n");
-	}*/
