@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations.c                                       :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 22:32:18 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 10:01:52 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 14:15:05 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 // s->array: source - copy starts from first element of the array.
 // len: size of the stack in bytes excluding the last element.
 // sets first element (s->array[0]) to nbr - value of the previously last element.
-void	reverse_rotate(t_stack *s)
+static void	reverse_rotate(t_stack *s)
 {
 	int	nbr;
 	int	len;
@@ -31,7 +31,7 @@ void	reverse_rotate(t_stack *s)
 	}
 }
 
-void	rotate(t_stack *s)
+static void	rotate(t_stack *s)
 {
 	int	nbr;
 	int	len;
@@ -45,15 +45,36 @@ void	rotate(t_stack *s)
 	}
 }
 
-void	swap(t_stack *s)
+// direction: index is less than half the size of stack -> rotate to bottom
+// otherwise -> reverse rotate to top
+static int	rotate_direction(t_stack *s, int index)
 {
-	int	nbr;
+	int	median;
 
-	if (s->size > 1)
-	{
-		nbr = s->array[0];
-		s->array[0] = s->array[1];
-		s->array[1] = nbr;
-	}
+	median = s->size / 2;
+	if (index < median) // above median
+		return (0);
+	return (1);
 }
 
+// rotates stack a: a certain number of times in the direction determined by the rotate_dir function
+void	rotate_stack(char *name, t_stack *a, int index, int moves)
+{
+	int	j;
+
+	j = 0;
+	while (j != moves)
+	{
+		if (rotate_direction(a, index))
+		{
+			ft_printf("rr%s\n", name);
+			reverse_rotate(a);
+		}
+		else
+		{
+			ft_printf("r%s\n", name);
+			rotate(a);
+		}
+		j++;
+	}
+}

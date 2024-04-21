@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 22:16:56 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 14:09:56 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 14:13:48 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,40 +146,6 @@ int	calculate_ops(t_stack *a, int index, t_stack *b)
 	min_op += calculate_min_rotations(b, location);
 	// adding 1 is to account for the operation of actually moving the element from stack a to stack b.
 	return (min_op + 1);
-}
-
-// direction: index is less than half the size of stack -> rotate to bottom
-// otherwise -> reverse rotate to top
-int	rotate_direction(t_stack *s, int index)
-{
-	int	median;
-
-	median = s->size / 2;
-	if (index < median) // above median
-		return (0);
-	return (1);
-}
-
-// rotates stack a: a certain number of times in the direction determined by the rotate_dir function
-void	rotate_stack(char *name, t_stack *a, int index, int moves)
-{
-	int	j;
-
-	j = 0;
-	while (j != moves)
-	{
-		if (rotate_direction(a, index))
-		{
-			ft_printf("rr%s\n", name);
-			reverse_rotate(a);
-		}
-		else
-		{
-			ft_printf("r%s\n", name);
-			rotate(a);
-		}
-		j++;
-	}
 }
 
 // moves a value from stack a to stack b and prints the operations performed during this process

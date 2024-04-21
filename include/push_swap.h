@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 11:43:07 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 14:15:13 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,8 @@ typedef struct s_stack
 void	error_if(bool status);
 
 //Operations
-void	rotate(t_stack *s);
-void	reverse_rotate(t_stack *s);
 void	swap(t_stack *s);
+void	rotate_stack(char *name, t_stack *a, int index, int moves);
 
 //Stack prep
 void	append(t_stack *s, int nbr);
