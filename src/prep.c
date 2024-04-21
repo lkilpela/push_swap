@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 22:16:56 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 17:14:56 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 17:22:21 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -164,7 +164,7 @@ int	calculate_ops(t_stack *a, int i, t_stack *b)
 // calculates the cost of moving each item from stack a to stack b, 
 // finds the item with the lowest cost, moves that item, 
 // and prints the operations performed during this process.
-void	print_move(t_stack *a, t_stack *b)
+void	prep_push(t_stack *a, t_stack *b)
 {
 	int	*cost;
 	int	i;

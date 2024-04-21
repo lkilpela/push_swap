@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 17:20:12 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 17:21:32 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,7 @@ typedef struct s_stack
 	int	capacity;	// Maximum number of elements the stack can hold
 }				t_stack;
 
-// Handle errors
-void	error_if(bool status);
+
 
 //Operations
 void	swap(t_stack *s);
@@ -53,6 +52,7 @@ void	sort(t_stack *s);
 void	init_stack(t_stack *s);
 void	free_stack(t_stack *s);
 void	increase_capacity(t_stack *s);
-//Handle memory
 
+// Handle errors
+void	error_if(bool status);
 #endif
