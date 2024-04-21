@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 23:28:23 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 20:09:21 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 23:07:47 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int	is_sorted(t_stack *s)
 	int i;
 
 	i = 0;
-	if (s->size < 2)
-		return (1);
+	//if (s->size < 2)
+		//return (1);
 	while (i < s->size - 1)
 	{
 		if (s->array[i] > s->array[i + 1])

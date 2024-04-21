@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 22:32:18 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 16:29:03 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 22:57:52 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 // s->array: source - copy starts from first element of the array.
 // len: size of the stack in bytes excluding the last element.
 // sets first element (s->array[0]) to nbr - value of the previously last element.
-static void	reverse_rotate(t_stack *s)
+void	reverse_rotate(t_stack *s)
 {
 	int	nbr;
 	int	len;
@@ -31,7 +31,7 @@ static void	reverse_rotate(t_stack *s)
 	}
 }
 
-static void	rotate(t_stack *s)
+void	rotate(t_stack *s)
 {
 	int	nbr;
 	int	len;

@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 14:13:29 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 14:13:43 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 23:10:42 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,5 @@ void	swap(t_stack *s)
 		s->array[0] = s->array[1];
 		s->array[1] = nbr;
 	}
+	ft_printf("sa\n");
 }

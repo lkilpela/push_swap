@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   1push_swap.c                                       :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 21:58:26 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 22:04:17 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 23:16:17 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,17 @@ int main(int argc, char **argv)
 		build_stack(&a, argv_split);
 	else
 		build_stack(&a, argv + 1);
-	sort(&a);
+	if (is_sorted(&a) == 0)
+	{
+		if (a.size == 2)
+			swap(&a);
+		else if (a.size == 3)
+			sort_three(&a);
+		else
+			sort(&a);
+	}
 	if (argv_split && argc == 2)
 		free_ptrs(argv_split);
 	free_stack(&a);
-	system("leaks push_swap");
 	return (0);
 }

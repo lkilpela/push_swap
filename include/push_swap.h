@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 18:48:56 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 22:59:30 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ typedef struct s_stack
 void	swap(t_stack *s);
 void	rotate_stack(char *name, t_stack *a, int index, int moves);
 void	do_optimal_push(t_stack *a, t_stack *b);
+void	reverse_rotate(t_stack *s);
+void	rotate(t_stack *s);
 
 //Stack prep
 void	build_stack(t_stack *s, char **argv);
@@ -49,6 +51,7 @@ int		calculate_min_rotations(t_stack *s, int i);
 //Algorithms
 int		is_sorted(t_stack *s);
 void	sort(t_stack *s);
+void	sort_three(t_stack* s);
 
 //Utils
 void	init_stack(t_stack *s);
