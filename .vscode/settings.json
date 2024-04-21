@@ -4,6 +4,7 @@
         "queue": "c",
         "stack": "c",
         "random": "c",
-        "__node_handle": "c"
+        "__node_handle": "c",
+        "push_swap.h": "c"
     }
 }

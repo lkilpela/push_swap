@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 22:16:56 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/20 23:48:05 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 09:52:22 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 void	push_to_stack_back(t_stack *s, int nbr)// add to back of the stack
 {
 	if (s->capacity == s->size)
-		grow(s);
-	s->str[s->size] = nbr;
+		increase_capacity(s);
+	s->array[s->size] = nbr;
 	s->size++;
 }
 
@@ -33,9 +33,9 @@ int	remove_top(t_stack *s)
 	len = s->size * sizeof(int);
 	if (s->size)
 	{
-		ret = s->str[0];
+		ret = s->array[0];
 		s->size--;
-		ft_memmove(s->str, s->str + 1, len);
+		ft_memmove(s->array, s->array + 1, len);
 	}
 	return (ret);
 }

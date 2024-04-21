@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/20 22:09:23 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 09:54:21 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,25 +23,26 @@
 
 typedef struct s_stack
 {
-	int	*str;
-	int	size;
-	int capacity;
+	int	*array;		// Pointer to the array that holds elements of the stack
+	int	size;		// Current number of elements in the stack
+	int	capacity;	// Maximum number of elements the stack can hold
 }				t_stack;
 
 //Handle errors
-//int				validate_argument(int argc, char **argv);
-void			error_if(bool status);
-// argument initiation
+void	error_if(bool status);
+
 //Stack preparation
 
 //Nodes initiation
 
-//Commands
-
 //Algorithms
+int		is_sorted(t_stack *s);
+void	sort(t_stack *s);
 
 //Utils
-
+void	init_stack(t_stack *s);
+void	free_stack(t_stack *s);
+void	increase_capacity(t_stack *s);
 //Handle memory
 
 #endif

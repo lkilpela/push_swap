@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 23:48:07 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/20 23:54:06 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 09:50:36 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	is_duplicate(t_stack *s)
 		j = i;
 		while (j != s->size)
 		{
-			if (i != j && s->str[i] == s->str[j])
+			if (i != j && s->array[i] == s->array[j])
 				return (0);
 			j++;
 		}
