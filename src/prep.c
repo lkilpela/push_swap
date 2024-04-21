@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 22:16:56 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 17:22:21 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 17:37:09 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,41 +141,4 @@ int	find_insert_location(t_stack *s, int new_value)
 	//If the new value is greater than the current element, it returns the current i, 
 	//indicating that the new value should be inserted at this location.
 	return (biggest_i);
-}
-
-// calculates the minimum number of operations needed to move an element 
-// from stack a to stack b while maintaining the sorted order of the stacks.
-int	calculate_ops(t_stack *a, int i, t_stack *b)
-{
-	int	min_op;
-	int	location;
-	//calculates the minimum number of rotations needed to bring the element 
-	//at the given i in stack a to the top
-	min_op = calculate_min_rotations(a, i);
-	//finds the location in stack b where the element should be inserted to maintain the sorted order
-	location = find_insert_location(b, a->array[i]);
-	//calculates the minimum number of rotations needed to bring the element at 
-	//the location in stack b to the top.
-	min_op += calculate_min_rotations(b, location);
-	// adding 1 is to account for the operation of actually moving the element from stack a to stack b.
-	return (min_op + 1);
-}
-
-// calculates the cost of moving each item from stack a to stack b, 
-// finds the item with the lowest cost, moves that item, 
-// and prints the operations performed during this process.
-void	prep_push(t_stack *a, t_stack *b)
-{
-	int	*cost;
-	int	i;
-
-	cost = malloc(a->size * sizeof(int));
-	while (i != a->size)
-	{
-		cost[i] = calculate_ops(a, i, b);//calculates the cost of moving the item at i i from stack a to stack b
-		i++;
-	}
-	i = find_smallest(cost, a->size);// finds the i of the item with the lowest cost in the cost array.
-	push_a_to_b(a, i, b);//moves the item at i i from stack a to stack b and prints the operations 
-	free(cost);
 }

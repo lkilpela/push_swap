@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 23:28:23 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 16:24:09 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 17:31:23 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	sort(t_stack *s)
 		init_stack(&b);
 		while (s->size > 0)
 		{
-			print_move(s, &b);
+			execute_push(s, &b);
 		}
 		rotate_to_sort_stack("b", &b);
 		while (b.size > 0)

@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 17:21:32 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 17:37:06 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct s_stack
 //Operations
 void	swap(t_stack *s);
 void	rotate_stack(char *name, t_stack *a, int index, int moves);
-void	push_a_to_b(t_stack *a, int index, t_stack *b);
+void	push_a_to_b(t_stack *a, t_stack *b);
 
 //Stack prep
 void	build_stack(t_stack *s, char **argv);
@@ -42,7 +42,7 @@ int		remove_top(t_stack *s);
 int		min_rotation(t_stack *s, int index);
 int		calculate_min_rotations(t_stack *s, int index);
 void	rotate_to_sort_stack(char *name, t_stack *s);
-
+void	prep_push(t_stack *a, int index, t_stack *b);
 //Algorithms
 int		is_sorted(t_stack *s);
 void	sort(t_stack *s);
