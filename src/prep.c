@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 22:16:56 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 16:29:38 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 17:14:56 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,101 +59,101 @@ int	remove_top(t_stack *s)
 //	- quicker to rotate the stack upwards (rotate top nbr to bottom)
 // if the element is in the second half of the stack: closer to the bottom
 //	- quicker to rotate the stack downwards (rotate bottom nbr to top)
-int	calculate_min_rotations(t_stack *s, int index)
+int	calculate_min_rotations(t_stack *s, int i)
 {
 	int	median;
 
 	median = s->size / 2;
 	if (s->size < 2)
 		return (0);
-	if (index < median)
-		return (index);
-	return (s->size - index);
+	if (i < median)
+		return (i);
+	return (s->size - i);
 }
 
-// finds the index of the smallest element in an array
+// finds the i of the smallest element in an array
 int	find_smallest(int *array, int size)
 {
-	int		smallest_index;
-	int		current_index;
+	int		smallest_i;
+	int		current_i;
 	long	min_value;
 
 	min_value = LONG_MAX;
-	current_index = 0;
-	while (current_index != size)
+	current_i = 0;
+	while (current_i != size)
 	{
-		if (array[current_index] < min_value)
+		if (array[current_i] < min_value)
 		{
-			min_value = array[current_index];
-			smallest_index = current_index;
+			min_value = array[current_i];
+			smallest_i = current_i;
 		}
-		current_index++;
+		current_i++;
 	}
-	return (smallest_index);
+	return (smallest_i);
 }
 
-// finds the index of the biggest element in an array
+// finds the i of the biggest element in an array
 int	find_biggest(t_stack *s)
 {
-	int		biggest_index;
-	int		current_index;
+	int		biggest_i;
+	int		current_i;
 	long	max_value;
 
-	current_index = 0;
+	current_i = 0;
 	max_value = LONG_MIN;
-	while (current_index != s->size)
+	while (current_i != s->size)
 	{
-		if (s->array[current_index] > max_value)
+		if (s->array[current_i] > max_value)
 		{
-			max_value = s->array[current_index];
-			biggest_index = current_index;
+			max_value = s->array[current_i];
+			biggest_i = current_i;
 		}
-		current_index++;
+		current_i++;
 	}
-	return (biggest_index);
+	return (biggest_i);
 }
 
 // determines the best location to insert a new value into a sorted stack s 
 // in a way that maintains the sorted order.
 int	find_insert_location(t_stack *s, int new_value)
 {
-	int	biggest_index;
-	int	current_index;
+	int	biggest_i;
+	int	current_i;
 
 	if (s->size == 0 || s->size == 1)
 		return (0); // new value should be inserted at the beginning of stack.
-	biggest_index = find_biggest(s);
-	current_index = biggest_index;
-	while (current_index < s->size)//a loop that starts from the index of largest element,continues to end of the stack
+	biggest_i = find_biggest(s);
+	current_i = biggest_i;
+	while (current_i < s->size)//a loop that starts from the i of largest element,continues to end of the stack
 	{
-		if (new_value > s->array[current_index]);//If the new value is greater than the current element
-			return (current_index);//returns the current index -> new value should be inserted at this location.
-		current_index++;
+		if (new_value > s->array[current_i]);//If the new value is greater than the current element
+			return (current_i);//returns the current i -> new value should be inserted at this location.
+		current_i++;
 	}
 	//If new value is not greater than any of the elements from largest element to the end of the stack
-	current_index = 0;
-	while (current_index < biggest_index)//  loop that starts from beginning of the stack and continues to the largest element
+	current_i = 0;
+	while (current_i < biggest_i)//  loop that starts from beginning of the stack and continues to the largest element
 	{
-		if (new_value > s->array[current_index])//If the new value is greater than the current element
-			return (current_index);//the new value should be inserted at this location.
-		current_index++;
+		if (new_value > s->array[current_i])//If the new value is greater than the current element
+			return (current_i);//the new value should be inserted at this location.
+		current_i++;
 	}
-	//If the new value is greater than the current element, it returns the current index, 
+	//If the new value is greater than the current element, it returns the current i, 
 	//indicating that the new value should be inserted at this location.
-	return (biggest_index);
+	return (biggest_i);
 }
 
 // calculates the minimum number of operations needed to move an element 
 // from stack a to stack b while maintaining the sorted order of the stacks.
-int	calculate_ops(t_stack *a, int index, t_stack *b)
+int	calculate_ops(t_stack *a, int i, t_stack *b)
 {
 	int	min_op;
 	int	location;
 	//calculates the minimum number of rotations needed to bring the element 
-	//at the given index in stack a to the top
-	min_op = calculate_min_rotations(a, index);
+	//at the given i in stack a to the top
+	min_op = calculate_min_rotations(a, i);
 	//finds the location in stack b where the element should be inserted to maintain the sorted order
-	location = find_insert_location(b, a->array[index]);
+	location = find_insert_location(b, a->array[i]);
 	//calculates the minimum number of rotations needed to bring the element at 
 	//the location in stack b to the top.
 	min_op += calculate_min_rotations(b, location);
@@ -172,10 +172,10 @@ void	print_move(t_stack *a, t_stack *b)
 	cost = malloc(a->size * sizeof(int));
 	while (i != a->size)
 	{
-		cost[i] = calculate_ops(a, i, b);//calculates the cost of moving the item at index i from stack a to stack b
+		cost[i] = calculate_ops(a, i, b);//calculates the cost of moving the item at i i from stack a to stack b
 		i++;
 	}
-	i = find_smallest(cost, a->size);// finds the index of the item with the lowest cost in the cost array.
-	push_a_to_b(a, i, b);//moves the item at index i from stack a to stack b and prints the operations 
+	i = find_smallest(cost, a->size);// finds the i of the item with the lowest cost in the cost array.
+	push_a_to_b(a, i, b);//moves the item at i i from stack a to stack b and prints the operations 
 	free(cost);
 }
