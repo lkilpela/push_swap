@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 16:20:49 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 17:41:20 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 18:34:44 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,26 +30,8 @@ static int	calculate_min_rotations(t_stack *s, int i)
 	return (s->size - i);
 }
 
-// calculates the minimum number of operations needed to move an element 
-// from stack a to stack b while maintaining the sorted order of the stacks.
-static int	calculate_ops(t_stack *a, int i, t_stack *b)
-{
-	int	min_op;
-	int	location;
-	//calculates the minimum number of rotations needed to bring the element 
-	//at the given i in stack a to the top
-	min_op = calculate_min_rotations(a, i);
-	//finds the location in stack b where the element should be inserted to maintain the sorted order
-	location = find_insert_location(b, a->array[i]);
-	//calculates the minimum number of rotations needed to bring the element at 
-	//the location in stack b to the top.
-	min_op += calculate_min_rotations(b, location);
-	// adding 1 is to account for the operation of actually moving the element from stack a to stack b.
-	return (min_op + 1);
-}
-
 // moves a value from stack a to stack b and prints the operations performed during this process
-static void	prep_push(t_stack *a, int index, t_stack *b)
+static void	push_a_to_b(t_stack *a, int index, t_stack *b)
 {
 	int	a_moves;
 	int	b_index;
@@ -70,10 +52,28 @@ static void	prep_push(t_stack *a, int index, t_stack *b)
 	push_to_top(b, remove_top(a));
 }
 
+// calculates the minimum number of operations needed to move an element 
+// from stack a to stack b while maintaining the sorted order of the stacks.
+static int	calculate_ops(t_stack *a, int i, t_stack *b)
+{
+	int	min_op;
+	int	location;
+	//calculates the minimum number of rotations needed to bring the element 
+	//at the given i in stack a to the top
+	min_op = calculate_min_rotations(a, i);
+	//finds the location in stack b where the element should be inserted to maintain the sorted order
+	location = find_insert_location(b, a->array[i]);
+	//calculates the minimum number of rotations needed to bring the element at 
+	//the location in stack b to the top.
+	min_op += calculate_min_rotations(b, location);
+	// adding 1 is to account for the operation of actually moving the element from stack a to stack b.
+	return (min_op + 1);
+}
+
 // calculates the cost of moving each item from stack a to stack b, 
 // finds the item with the lowest cost, moves that item, 
 // and prints the operations performed during this process.
-void	push_a_to_b(t_stack *a, t_stack *b)
+void	do_optimal_push(t_stack *a, t_stack *b)
 {
 	int	*moves;
 	int	i;
@@ -85,6 +85,6 @@ void	push_a_to_b(t_stack *a, t_stack *b)
 		i++;
 	}
 	i = find_smallest(moves, a->size);// finds the i of the item with the lowest cost in the cost array.
-	prep_push(a, i, b);//moves the item at i i from stack a to stack b and prints the operations 
+	push_a_to_b(a, i, b);//moves the item at i i from stack a to stack b and prints the operations 
 	free(moves);
 }
