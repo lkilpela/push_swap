@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 21:58:26 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 18:43:57 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 19:13:15 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	**prepare_argv(int argc, char **argv)
 	char	**argv_split;
 
 	argv_split = NULL;
-	error_if(argc == 1 || (argc == 2 && !argv[1][0]));
+	//error_if(!(argc == 1 || (argc == 2 && !argv[1][0])));
 	if (argc == 2)
 	{
 		argv_split = ft_split(argv[1], ' ');

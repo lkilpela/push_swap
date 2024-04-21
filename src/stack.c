@@ -6,13 +6,13 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 23:48:07 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 18:53:37 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 19:19:18 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	is_duplicate(t_stack *s)
+static void	is_duplicate(t_stack *s)
 {
 	int	i;
 	int	j;
@@ -24,37 +24,47 @@ static int	is_duplicate(t_stack *s)
 		while (j != s->size)
 		{
 			if (i != j && s->array[i] == s->array[j])
-				return (0);
+			{
+				ft_printf("Error\n");
+				exit(1);
+			}
 			j++;
 		}
 		i++;
 	}
-	return (1);
 }
 
-static int	is_not_int(char *str)
+static void	is_not_int(char *str)
 {
 	if (!(*str == '+' || *str == '-' || ft_isdigit(*str)))
-		return (true);
+	{
+		ft_printf("Error\n");
+		exit(1);
+	}
 	if ((*str == '+' || *str == '-') && !ft_isdigit(*(str + 1)))
-		return (true);
+	{
+		ft_printf("Error\n");
+		exit(1);
+	}
 	str++;
 	while (*str)
 	{
 		if (!ft_isdigit(*str))
-			return (0);
+		{
+			ft_printf("Error\n");
+			exit(1);
+		}
 		str++;
 	}
-	return (1);
 }
 
 void	build_stack(t_stack *s, char **argv)
 {
 	while (*argv)
 	{
-		error_if(is_not_int(*argv));
+		is_not_int(*argv);
 		push_to_back(s, ft_atol(*argv));
 		argv++;
 	}
-	error_if(is_duplicate(s));
+	is_duplicate(s);
 }
