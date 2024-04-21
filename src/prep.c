@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 22:16:56 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 09:52:22 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 10:26:07 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 // If the stack is full, increase its capacity
 // Add the new value to the end of the stack
 // Increment the size of the stack
-void	push_to_stack_back(t_stack *s, int nbr)// add to back of the stack
+void	increase_and_add_to_back(t_stack *s, int nbr)// add to back of the stack
 {
 	if (s->capacity == s->size)
 		increase_capacity(s);

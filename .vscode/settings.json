@@ -5,6 +5,7 @@
         "stack": "c",
         "random": "c",
         "__node_handle": "c",
-        "push_swap.h": "c"
+        "push_swap.h": "c",
+        "regex": "c"
     }
 }
