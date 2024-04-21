@@ -6,16 +6,29 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 22:16:56 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 14:13:48 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 16:29:38 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// adds a new value to the top of the stack
+void	push_to_top(t_stack *s, int new_value)
+{
+	int	len;
+
+	len = s->size * sizeof(int);
+	if (s->capacity == s->size)
+		increase_capacity(s);
+	ft_memmove(s->array + 1, s->array, len);
+	s->array[0] = new_value;
+	s->size++;
+}
+
 // If the stack is full, increase its capacity
 // Add the new value to the end of the stack
 // Increment the size of the stack
-void	append(t_stack *s, int new_value)// add to back of the stack
+void	push_to_back(t_stack *s, int new_value)
 {
 	if (s->capacity == s->size)
 		increase_capacity(s);
@@ -148,28 +161,6 @@ int	calculate_ops(t_stack *a, int index, t_stack *b)
 	return (min_op + 1);
 }
 
-// moves a value from stack a to stack b and prints the operations performed during this process
-void	push_a_to_b(t_stack *a, int index, t_stack *b)
-{
-	int	a_moves;
-	int	b_index;
-	int b_moves;
-
-	// calculates minimum number of rotations needed to bring element at the given index in stack a to top
-	a_moves = calculate_min_rotations(a, index);
-	// finds the location in stack b where the element should be inserted to maintain the sorted order.
-	b_index = find_insert_location(b, a->array[index]);
-	//calculates the minimum number of rotations needed to bring the element at the location b_index in stack b to the top
-	b_moves = calculate_min_rotations(b, b_index);
-	// rotates stack a a_moves times and prints the rotation operations.
-	rotate_stack("a", a, index, a_moves);
-	// rotates stack b b_moves times and prints the rotation operations.
-	rotate_stack("b", b, b_index, b_moves);
-	ft_printf("pb\n");// an element is being pushed from stack a to stack b.
-	//removes the top element from stack a and appends it to stack b
-	append(b, remove_top(a));
-}
-
 // calculates the cost of moving each item from stack a to stack b, 
 // finds the item with the lowest cost, moves that item, 
 // and prints the operations performed during this process.
@@ -188,16 +179,3 @@ void	print_move(t_stack *a, t_stack *b)
 	push_a_to_b(a, i, b);//moves the item at index i from stack a to stack b and prints the operations 
 	free(cost);
 }
-
-
-void	rotate_to_sort_stack(char *name, t_stack *s)
-{
-	int	i;
-
-	if (s->size > 1)
-	{
-		i = find_biggest(s);
-		rotate_stack(name, s, i, calculate_min_rotations(s, i));
-	}
-}
-

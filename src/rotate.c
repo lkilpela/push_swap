@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 22:32:18 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 14:15:05 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 16:29:03 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,18 @@ void	rotate_stack(char *name, t_stack *a, int index, int moves)
 			rotate(a);
 		}
 		j++;
+	}
+}
+
+// rotates stack s until it's sorted in ascending order
+void	rotate_to_sort_stack(char *name, t_stack *s)
+{
+	int	i;
+
+	if (s->size > 1)
+	{
+		i = find_biggest(s);
+		//rotates the stack until the largest element is at the top
+		rotate_stack(name, s, i, calculate_min_rotations(s, i));
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 23:28:23 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 10:04:03 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 16:24:09 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,16 +48,34 @@ void	sort_three(t_stack *s)
 	}
 }
 
+void print_stack(t_stack *s) // need to remove later
+{
+	fprintf(stderr, "---\n");
+	for(int i = 0; i < s->size; ++i) {
+		fprintf(stderr, "%d\n", s->array[i]);
+	}
+	fprintf(stderr, "---\n");
+}
+
 void	sort(t_stack *s)
 {
 	t_stack b;
 
+	print_stack(s);//need to remove later
 	if (!is_sorted(s))
 	{
 		init_stack(&b);
 		while (s->size > 0)
 		{
-			
+			print_move(s, &b);
 		}
+		rotate_to_sort_stack("b", &b);
+		while (b.size > 0)
+		{
+			push_to_top(s, remove_top(&b));
+			ft_printf("pa\n");
+		}
+		free_stack(&b);
 	}
+	print_stack(s); //need to remove later
 }
