@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 22:16:56 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 11:41:42 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 11:57:20 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,3 +58,44 @@ int	min_rotation(t_stack *s, int index)
 	return (s->size - index);
 }
 
+// finds the index of the smallest element in an array
+int	find_smallest(int *array, int size)
+{
+	int		smallest_index;
+	int		current_index;
+	long	min_value;
+
+	min_value = LONG_MAX;
+	current_index = 0;
+	while (current_index != size)
+	{
+		if (array[current_index] < min_value)
+		{
+			min_value = array[current_index];
+			smallest_index = current_index;
+		}
+		current_index++;
+	}
+	return (smallest_index);
+}
+
+// finds the index of the biggest element in an array
+int	find_biggest(t_stack *s)
+{
+	int		biggest_index;
+	int		current_index;
+	long	max_value;
+
+	current_index = 0;
+	max_value = LONG_MIN;
+	while (current_index != s->size)
+	{
+		if (s->array[current_index] > max_value)
+		{
+			max_value = s->array[current_index];
+			biggest_index = current_index;
+		}
+		current_index++;
+	}
+	return (biggest_index);
+}
