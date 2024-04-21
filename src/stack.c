@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 23:48:07 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 11:39:58 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 11:41:59 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	build_stack(t_stack *s, char **argv)
 	i = 0;
 	while (*argv)
 	{
-		push_to_stack_back(s, ft_atol(*argv));
+		append(s, ft_atol(*argv));
 		error_if(is_duplicate(*argv));
 		argv++;
 	}

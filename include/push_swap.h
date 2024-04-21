@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 09:58:33 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 11:43:07 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,10 @@ void	rotate(t_stack *s);
 void	reverse_rotate(t_stack *s);
 void	swap(t_stack *s);
 
-//Nodes initiation
+//Stack prep
+void	append(t_stack *s, int nbr);
+int		remove_top(t_stack *s);
+int		min_rotation(t_stack *s, int index);
 
 //Algorithms
 int		is_sorted(t_stack *s);
