@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 22:16:56 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 13:58:30 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 14:09:56 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -202,5 +202,36 @@ void	push_a_to_b(t_stack *a, int index, t_stack *b)
 	ft_printf("pb\n");// an element is being pushed from stack a to stack b.
 	//removes the top element from stack a and appends it to stack b
 	append(b, remove_top(a));
+}
+
+// calculates the cost of moving each item from stack a to stack b, 
+// finds the item with the lowest cost, moves that item, 
+// and prints the operations performed during this process.
+void	print_move(t_stack *a, t_stack *b)
+{
+	int	*cost;
+	int	i;
+
+	cost = malloc(a->size * sizeof(int));
+	while (i != a->size)
+	{
+		cost[i] = calculate_ops(a, i, b);//calculates the cost of moving the item at index i from stack a to stack b
+		i++;
+	}
+	i = find_smallest(cost, a->size);// finds the index of the item with the lowest cost in the cost array.
+	push_a_to_b(a, i, b);//moves the item at index i from stack a to stack b and prints the operations 
+	free(cost);
+}
+
+
+void	rotate_to_sort_stack(char *name, t_stack *s)
+{
+	int	i;
+
+	if (s->size > 1)
+	{
+		i = find_biggest(s);
+		rotate_stack(name, s, i, calculate_min_rotations(s, i));
+	}
 }
 
