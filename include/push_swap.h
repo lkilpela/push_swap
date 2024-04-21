@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 17:37:06 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 17:40:38 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	push_a_to_b(t_stack *a, t_stack *b);
 void	build_stack(t_stack *s, char **argv);
 void	push_to_top(t_stack *s, int nbr);
 int		remove_top(t_stack *s);
-int		min_rotation(t_stack *s, int index);
+int		find_insert_location(t_stack *s, int new_value);
 int		calculate_min_rotations(t_stack *s, int index);
 void	rotate_to_sort_stack(char *name, t_stack *s);
 void	prep_push(t_stack *a, int index, t_stack *b);

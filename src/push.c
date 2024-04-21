@@ -6,15 +6,33 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 16:20:49 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 17:36:12 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 17:41:20 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// calculates minimum number of rotations required to move an element to top
+// stack size is less than 2: no rotations are needed.
+// if the element is in the first half of the stack: closer to top 
+//	- quicker to rotate the stack upwards (rotate top nbr to bottom)
+// if the element is in the second half of the stack: closer to the bottom
+//	- quicker to rotate the stack downwards (rotate bottom nbr to top)
+static int	calculate_min_rotations(t_stack *s, int i)
+{
+	int	median;
+
+	median = s->size / 2;
+	if (s->size < 2)
+		return (0);
+	if (i < median)
+		return (i);
+	return (s->size - i);
+}
+
 // calculates the minimum number of operations needed to move an element 
 // from stack a to stack b while maintaining the sorted order of the stacks.
-int	calculate_ops(t_stack *a, int i, t_stack *b)
+static int	calculate_ops(t_stack *a, int i, t_stack *b)
 {
 	int	min_op;
 	int	location;
@@ -31,7 +49,7 @@ int	calculate_ops(t_stack *a, int i, t_stack *b)
 }
 
 // moves a value from stack a to stack b and prints the operations performed during this process
-void	prep_push(t_stack *a, int index, t_stack *b)
+static void	prep_push(t_stack *a, int index, t_stack *b)
 {
 	int	a_moves;
 	int	b_index;

@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 22:16:56 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 17:37:09 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 17:40:56 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,26 +53,8 @@ int	remove_top(t_stack *s)
 	return (ret);
 }
 
-// calculates minimum number of rotations required to move an element to top
-// stack size is less than 2: no rotations are needed.
-// if the element is in the first half of the stack: closer to top 
-//	- quicker to rotate the stack upwards (rotate top nbr to bottom)
-// if the element is in the second half of the stack: closer to the bottom
-//	- quicker to rotate the stack downwards (rotate bottom nbr to top)
-int	calculate_min_rotations(t_stack *s, int i)
-{
-	int	median;
-
-	median = s->size / 2;
-	if (s->size < 2)
-		return (0);
-	if (i < median)
-		return (i);
-	return (s->size - i);
-}
-
 // finds the i of the smallest element in an array
-int	find_smallest(int *array, int size)
+static int	find_smallest(int *array, int size)
 {
 	int		smallest_i;
 	int		current_i;
@@ -93,7 +75,7 @@ int	find_smallest(int *array, int size)
 }
 
 // finds the i of the biggest element in an array
-int	find_biggest(t_stack *s)
+static int	find_biggest(t_stack *s)
 {
 	int		biggest_i;
 	int		current_i;
