@@ -71,33 +71,10 @@ https://github.com/Tempest989/42_Push_Swap_Tester
 
 ### Visualizer
 
-1.
 ```
-git clone https://github.com/o-reo/push_swap_visualizer.git
-```
-
-2.Install the necessary packages
-```
-brew install cmake
-brew install gcc
-brew install llvm
-brew install mesa
-brew install mesa-glu
-brew install libx11
-brew install libxrandr
-brew install libudev
-brew install freetype
+git clone https://github.com/ailopez-o/42Barcelona-PushSwap-ProChecker
 ```
 
-3.
-```
-cd push_swap_visualizer
-mkdir build
-cd build
-cmake ..
-make
-./bin/visualizer
-```
 ### 🕹️ How it works
 
 - The program takes as an argument a stack of integers (duplicates not allowed).
