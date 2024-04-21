@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 22:16:56 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 13:43:26 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 13:58:30 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,19 +152,23 @@ int	calculate_ops(t_stack *a, int index, t_stack *b)
 // otherwise -> reverse rotate to top
 int	rotate_direction(t_stack *s, int index)
 {
-	if (index < s->size / 2) // above median
+	int	median;
+
+	median = s->size / 2;
+	if (index < median) // above median
 		return (0);
 	return (1);
 }
 
-void	rotate_stack(char *name, t_stack *a, int i, int moves)
+// rotates stack a: a certain number of times in the direction determined by the rotate_dir function
+void	rotate_stack(char *name, t_stack *a, int index, int moves)
 {
 	int	j;
 
 	j = 0;
 	while (j != moves)
 	{
-		if (rotate_direction(a, i))
+		if (rotate_direction(a, index))
 		{
 			ft_printf("rr%s\n", name);
 			reverse_rotate(a);
@@ -177,3 +181,26 @@ void	rotate_stack(char *name, t_stack *a, int i, int moves)
 		j++;
 	}
 }
+
+// moves a value from stack a to stack b and prints the operations performed during this process
+void	push_a_to_b(t_stack *a, int index, t_stack *b)
+{
+	int	a_moves;
+	int	b_index;
+	int b_moves;
+
+	// calculates minimum number of rotations needed to bring element at the given index in stack a to top
+	a_moves = calculate_min_rotations(a, index);
+	// finds the location in stack b where the element should be inserted to maintain the sorted order.
+	b_index = find_insert_location(b, a->array[index]);
+	//calculates the minimum number of rotations needed to bring the element at the location b_index in stack b to the top
+	b_moves = calculate_min_rotations(b, b_index);
+	// rotates stack a a_moves times and prints the rotation operations.
+	rotate_stack("a", a, index, a_moves);
+	// rotates stack b b_moves times and prints the rotation operations.
+	rotate_stack("b", b, b_index, b_moves);
+	ft_printf("pb\n");// an element is being pushed from stack a to stack b.
+	//removes the top element from stack a and appends it to stack b
+	append(b, remove_top(a));
+}
+
