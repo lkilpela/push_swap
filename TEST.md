@@ -16,16 +16,63 @@ than MAXINT
 4. Run push_swap without any parameters. The program must not
 display anything and give the prompt back.
 
+5. ./push_swap 42
 
+6. ./push_swap 2 3
 
-# Equal to 2 arguments and second argument is a string of integers
-./push_swap "42 52 1 5"
+7. ./push_swap 0 1 2 3
+
+8. ./push_swap 0 1 2 3 4 5 6 7 8
+
+9. ./push_swap 0 1 2 3 4 5 6 7 8 9
+
+# Use the checker binary 
+
+1. ARG="2 1 0"; ./push_swap $ARG | ./checker_Mac $ARG
+
+2. ARG="'Between 0 and 3 randomly values chosen'"; ./push_swap $ARG | ./checker_Mac $ARG"
+
+3. ARG="1 5 2 4 3"; ./push_swap $ARG | ./checker_Mac $ARG
+
+5. ARG="<5 random values>"; ./push_swap $ARG | ./checker_Mac $ARG
+
+-> instruction < 12
+
+6. ARG="<100 random values>"; ./push_swap $ARG | ./checker_Mac $ARG
+Give points in accordance:
+less than 700: 5
+less than 900: 4
+less than 1100: 3
+less than 1300: 2
+less than 1500: 1
+
+7. ARG="<500 random values>"; ./push_swap $ARG | ./checker_Mac $ARG
+less than 5500: 5
+less than 7000: 4
+less than 8500: 3
+less than 10000: 2
+less than 11500: 1 
 
 [RAND](https://www.random.org/integer-sets/)
+
+# Random 5
+812 107 62 458 263
+500 871 328 451 49
+201 684 13 527 424
+969 911 104 120 348
+706 593 100 345 242
+242 951 544 50 4
+704 467 662 665 672
+670 633 316 873 493
+55 456 976 240 660
+345 31 84 473 790
+
+-> instruction < 12
 
 # Random 100
 
 936 852 483 343 330 34 632 609 226 952 381 513 37 824 713 348 59 308 969 444 870 786 900 898 447 57 654 688 440 468 905 314 16 708 799 375 408 536 579 542 845 152 441 951 888 876 77 148 232 889 778 31 844 385 142 546 214 360 307 700 223 771 792 99 532 602 656 368 658 635 731 275 923 859 525 568 455 735 413 764 614 953 312 286 472 85 263 250 344 76 461 909 251 402 804 256 70 442 201 75
+
 
 # Random 500 
 

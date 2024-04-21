@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 21:58:26 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 19:44:20 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 22:04:17 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	**prepare_argv(int argc, char **argv)
 	char	**argv_split;
 
 	argv_split = NULL;
-	if ((argc == 1 || (argc == 2 && !argv[1][0])))
+	if (argc == 2 && !argv[1][0])
 	{
 		ft_printf("Error\n");
 		exit(1);
@@ -28,7 +28,7 @@ char	**prepare_argv(int argc, char **argv)
 		return (argv_split);
 	}
 	else
-		return NULL;
+		return (NULL);
 }
 
 int main(int argc, char **argv)
@@ -37,6 +37,8 @@ int main(int argc, char **argv)
 	char		**argv_split;
 
 	init_stack(&a);
+	if (argc == 1)
+		return (0);
 	argv_split = prepare_argv(argc, argv);
 	if (argv_split)
 		build_stack(&a, argv_split);
@@ -46,5 +48,6 @@ int main(int argc, char **argv)
 	if (argv_split && argc == 2)
 		free_ptrs(argv_split);
 	free_stack(&a);
+	system("leaks push_swap");
 	return (0);
 }
