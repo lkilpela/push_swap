@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 22:16:56 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 12:54:52 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 13:03:17 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,14 +130,21 @@ int	find_insert_location(t_stack *s, int new_value)
 	return (biggest_index);
 }
 
-// calculates the total cost of moving an element from stack a to stack b
-int	calculate_cost(t_stack *a, int index, t_stack *b)
+// calculates the minimum number of operations needed to move an element 
+// from stack a to stack b while maintaining the sorted order of the stacks.
+int	calculate_ops(t_stack *a, int index, t_stack *b)
 {
-	int	cost;
-	int	loc;
-
-	cost = calculate_min_rotations(a, index);
-	loc = find_insert_location(b, a->array[index]);
-	cost += calculate_min_rotations(b, loc);
-	return (cost + 1);
+	int	min_op;
+	int	location;
+	//calculates the minimum number of rotations needed to bring the element 
+	//at the given index in stack a to the top
+	min_op = calculate_min_rotations(a, index);
+	//finds the location in stack b where the element should be inserted to maintain the sorted order
+	location = find_insert_location(b, a->array[index]);
+	//calculates the minimum number of rotations needed to bring the element at 
+	//the location in stack b to the top.
+	min_op += calculate_min_rotations(b, location);
+	// adding 1 is to account for the operation of actually moving the element from stack a to stack b.
+	return (min_op + 1);
 }
+
