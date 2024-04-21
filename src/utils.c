@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 22:05:49 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 10:06:29 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 18:44:29 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,19 @@ void	init_stack(t_stack *s)
 	s->capacity = 500;
 	s->array = malloc(sizeof(int) * s->capacity);
 	s->size = 0;
+}
+
+void	free_ptrs(char **array)
+{
+	int	i;
+
+	i = 0;
+	while (array[i])
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
 }
 
 void	free_stack(t_stack *s)

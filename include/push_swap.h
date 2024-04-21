@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 18:39:21 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 18:48:56 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ typedef struct s_stack
 //Operations
 void	swap(t_stack *s);
 void	rotate_stack(char *name, t_stack *a, int index, int moves);
-void	push_a_to_b(t_stack *a, int index, t_stack *b);
 void	do_optimal_push(t_stack *a, t_stack *b);
 
 //Stack prep
@@ -42,8 +41,10 @@ void	push_to_top(t_stack *s, int new_value);
 void	push_to_back(t_stack *s, int new_value);
 int		remove_top(t_stack *s);
 int		find_insert_location(t_stack *s, int new_value);
-int		calculate_min_rotations(t_stack *s, int index);
 void	rotate_to_sort_stack(char *name, t_stack *s);
+int		find_smallest(int *array, int size);
+int		find_biggest(t_stack *s);
+int		calculate_min_rotations(t_stack *s, int i);
 
 //Algorithms
 int		is_sorted(t_stack *s);
@@ -53,7 +54,8 @@ void	sort(t_stack *s);
 void	init_stack(t_stack *s);
 void	free_stack(t_stack *s);
 void	increase_capacity(t_stack *s);
+void	free_ptrs(char **array);
 
 // Handle errors
-void	error_if(bool status);
+void	error_if(int status);
 #endif

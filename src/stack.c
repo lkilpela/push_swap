@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 23:48:07 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 17:20:30 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 18:53:37 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,15 +50,11 @@ static int	is_not_int(char *str)
 
 void	build_stack(t_stack *s, char **argv)
 {
-	int	i;
-	int	j;
-
-	i = 0;
 	while (*argv)
 	{
+		error_if(is_not_int(*argv));
 		push_to_back(s, ft_atol(*argv));
-		error_if(is_duplicate(*argv));
 		argv++;
 	}
-	
+	error_if(is_duplicate(s));
 }

@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 16:20:49 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 18:34:44 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 18:48:45 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 //	- quicker to rotate the stack upwards (rotate top nbr to bottom)
 // if the element is in the second half of the stack: closer to the bottom
 //	- quicker to rotate the stack downwards (rotate bottom nbr to top)
-static int	calculate_min_rotations(t_stack *s, int i)
+int	calculate_min_rotations(t_stack *s, int i)
 {
 	int	median;
 
@@ -78,6 +78,7 @@ void	do_optimal_push(t_stack *a, t_stack *b)
 	int	*moves;
 	int	i;
 
+	i = 0;
 	moves = malloc(a->size * sizeof(int));
 	while (i != a->size)
 	{

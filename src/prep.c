@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 22:16:56 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 17:40:56 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/21 18:48:03 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	remove_top(t_stack *s)
 }
 
 // finds the i of the smallest element in an array
-static int	find_smallest(int *array, int size)
+int	find_smallest(int *array, int size)
 {
 	int		smallest_i;
 	int		current_i;
@@ -75,7 +75,7 @@ static int	find_smallest(int *array, int size)
 }
 
 // finds the i of the biggest element in an array
-static int	find_biggest(t_stack *s)
+int	find_biggest(t_stack *s)
 {
 	int		biggest_i;
 	int		current_i;
@@ -108,7 +108,7 @@ int	find_insert_location(t_stack *s, int new_value)
 	current_i = biggest_i;
 	while (current_i < s->size)//a loop that starts from the i of largest element,continues to end of the stack
 	{
-		if (new_value > s->array[current_i]);//If the new value is greater than the current element
+		if (new_value > s->array[current_i])//If the new value is greater than the current element
 			return (current_i);//returns the current i -> new value should be inserted at this location.
 		current_i++;
 	}
