@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 23:35:42 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/22 10:21:38 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/22 10:23:58 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 //Identify the two smallest numbers in the stack.
 // Move these two numbers to the top of the stack using the appropriate operations (ra, rra, sa).
 // Push these two numbers onto stack B (pb).
-void	rotate_smallest_to_top(t_stack *a, t_stack *b)
+static void	rotate_smallest_to_top(t_stack *a, t_stack *b)
 {
 	int	smallest_i;
 	int	a_moves;
