@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 21:58:26 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/22 11:58:07 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/22 12:17:45 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ int	main(int argc, char **argv)
 	t_stack		a;
 	char		**argv_split;
 
-	init_stack(&a);
 	if (argc == 1)
 		return (0);
 	argv_split = prepare_argv(argc, argv);
+	init_stack(&a);
 	if (argv_split)
 		build_stack(&a, argv_split);
 	else
