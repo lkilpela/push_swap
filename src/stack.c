@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 23:48:07 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/22 11:54:20 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/22 11:56:29 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,13 +87,13 @@ void	build_stack(t_stack *s, char **argv)
 	long	nbr;
 	int		overflow;
 
+	overflow = 0;
 	while (*argv)
 	{
 		is_not_int(*argv);
 		nbr = ft_atol(*argv, &overflow);
-		if (nbr > INT_MAX || nbr < INT_MIN)
+		if (nbr > INT_MAX || nbr < INT_MIN || overflow == 1)
 		{
-			overflow = 1;
 			ft_putstr_fd("Error\n", STDERR_FILENO);
 			exit(EXIT_FAILURE);
 		}
