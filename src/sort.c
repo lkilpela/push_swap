@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 23:28:23 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/22 11:30:01 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/22 11:36:52 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,18 @@ int	is_sorted(t_stack *s)
 	return (1);
 }
 
+static void	sort_big(t_stack *a, t_stack *b)
+{
+	while (a->size > 0)
+		do_optimal_push(a, b);
+	rotate_to_sort_stack("b", b);
+	while (b->size > 0)
+	{
+		push_to_top(a, remove_top(b));
+		ft_printf("pa\n");
+	}
+}
+
 void	sort(t_stack *a)
 {
 	t_stack	b;
@@ -52,19 +64,12 @@ void	sort(t_stack *a)
 			swap(a);
 		else if (a->size == 3)
 			sort_three(a);
+		else if (a->size == 4)
+			sort_four(a, &b);
 		else if (a->size == 5)
 			sort_five(a, &b);
 		else
-		{
-			while (a->size > 0)
-				do_optimal_push(a, &b);
-			rotate_to_sort_stack("b", &b);
-			while (b.size > 0)
-			{
-				push_to_top(a, remove_top(&b));
-				ft_printf("pa\n");
-			}
-		}
+			sort_big(a, &b);
 		free_stack(&b);
 	}
 }
