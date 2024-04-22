@@ -6,11 +6,26 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 23:28:23 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/22 10:59:35 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/22 11:12:47 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+// Identify the two smallest numbers in the stack.
+// Move these two numbers to the top of the stack by rotating the stack.
+// Push these two numbers onto stack B (pb).
+void	rotate_smallest_to_top(t_stack *a, t_stack *b)
+{
+	int	smallest_i;
+	int	a_moves;
+
+	smallest_i = find_smallest(a->array, a->size);
+	a_moves = calculate_min_rotations(a, smallest_i);
+	rotate_stack("a", a, smallest_i, a_moves);
+	push_to_top(b, remove_top(a));
+	ft_printf("pb\n");
+}
 
 int	is_sorted(t_stack *s)
 {
