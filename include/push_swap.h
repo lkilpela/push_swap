@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/22 10:55:06 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/22 10:57:35 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,12 @@ typedef struct s_stack
 	int	capacity;	// Maximum number of elements the stack can hold
 }				t_stack;
 
-
-
 //Operations
 void	swap(t_stack *s);
-void	rotate_stack(char *name, t_stack *a, int index, int moves);
-void	do_optimal_push(t_stack *a, t_stack *b);
 void	reverse_rotate(t_stack *s);
 void	rotate(t_stack *s);
+void	do_optimal_push(t_stack *a, t_stack *b);
+void	rotate_stack(char *name, t_stack *a, int index, int moves);
 
 //Stack prep
 void	build_stack(t_stack *s, char **argv);
