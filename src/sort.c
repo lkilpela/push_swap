@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 23:28:23 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 23:07:47 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/22 10:47:46 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,25 +37,30 @@ int	is_sorted(t_stack *s)
 	fprintf(stderr, "---\n");
 }*/
 
-void	sort(t_stack *s)
+void	sort(t_stack *a)
 {
 	t_stack b;
 
-	//print_stack(s);//need to remove later
-	if (!is_sorted(s))
+	if (!is_sorted(a))
 	{
 		init_stack(&b);
-		while (s->size > 0)
+		if (a->size == 2)
+			swap(a);
+		else if (a->size == 3)
+			sort_three(a);
+		else if (a->size == 5)
+			sort_five(a, &b);
+		else
 		{
-			do_optimal_push(s, &b);
-		}
-		rotate_to_sort_stack("b", &b);
-		while (b.size > 0)
-		{
-			push_to_top(s, remove_top(&b));
-			ft_printf("pa\n");
+			while (a->size > 0)
+				do_optimal_push(a, &b);
+			rotate_to_sort_stack("b", &b);
+			while (b.size > 0)
+			{
+				push_to_top(a, remove_top(&b));
+				ft_printf("pa\n");
+			}
 		}
 		free_stack(&b);
 	}
-	//print_stack(s); //need to remove later
 }

@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 21:58:26 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 23:16:17 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/22 10:48:06 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,15 +44,7 @@ int main(int argc, char **argv)
 		build_stack(&a, argv_split);
 	else
 		build_stack(&a, argv + 1);
-	if (is_sorted(&a) == 0)
-	{
-		if (a.size == 2)
-			swap(&a);
-		else if (a.size == 3)
-			sort_three(&a);
-		else
-			sort(&a);
-	}
+	sort(&a);
 	if (argv_split && argc == 2)
 		free_ptrs(argv_split);
 	free_stack(&a);
