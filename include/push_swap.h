@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/22 10:57:35 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/22 10:59:14 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void	reverse_rotate(t_stack *s);
 void	rotate(t_stack *s);
 void	do_optimal_push(t_stack *a, t_stack *b);
 void	rotate_stack(char *name, t_stack *a, int index, int moves);
-
 //Stack prep
 void	build_stack(t_stack *s, char **argv);
 void	push_to_top(t_stack *s, int new_value);
@@ -45,20 +44,17 @@ void	rotate_to_sort_stack(char *name, t_stack *s);
 int		find_smallest(int *array, int size);
 int		find_biggest(t_stack *s);
 int		calculate_min_rotations(t_stack *s, int i);
-
 //Algorithms
 int		is_sorted(t_stack *s);
 void	sort(t_stack *s);
 void	sort_three(t_stack* s);
 void	sort_four(t_stack *a, t_stack *b);
 void	sort_five(t_stack *a, t_stack *b);
-
 //Utils
 void	init_stack(t_stack *s);
 void	free_stack(t_stack *s);
 void	increase_capacity(t_stack *s);
 void	free_ptrs(char **array);
-
 // Handle errors
 void	error_if(int status);
 #endif
