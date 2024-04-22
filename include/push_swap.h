@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/22 10:59:14 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/22 11:01:22 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int		calculate_min_rotations(t_stack *s, int i);
 //Algorithms
 int		is_sorted(t_stack *s);
 void	sort(t_stack *s);
-void	sort_three(t_stack* s);
+void	sort_three(t_stack *a);
 void	sort_four(t_stack *a, t_stack *b);
 void	sort_five(t_stack *a, t_stack *b);
 //Utils

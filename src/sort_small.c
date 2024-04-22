@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 23:35:42 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/22 11:00:16 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/22 11:01:32 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	print_rotate(t_stack *s)
 	ft_printf("ra\n");
 }
 
-void	sort_three(t_stack* s)
+void	sort_three(t_stack *a)
 {
 	int a = s->array[0];
 	int b = s->array[1];
