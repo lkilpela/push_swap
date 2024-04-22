@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 23:48:07 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/22 11:30:15 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/22 11:42:58 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,21 @@ static void	is_not_int(char *str)
 {
 	if (!(*str == '+' || *str == '-' || ft_isdigit(*str)))
 	{
-		ft_printf("Error\n");
-		exit(1);
+		ft_putstr_fd("Error\n", STDERR_FILENO);
+		exit(EXIT_FAILURE);
 	}
 	if ((*str == '+' || *str == '-') && !ft_isdigit(*(str + 1)))
 	{
-		ft_printf("Error\n");
-		exit(1);
+		ft_putstr_fd("Error\n", STDERR_FILENO);
+		exit(EXIT_FAILURE);
 	}
 	str++;
 	while (*str)
 	{
 		if (!ft_isdigit(*str))
 		{
-			ft_printf("Error\n");
-			exit(1);
+			ft_putstr_fd("Error\n", STDERR_FILENO);
+			exit(EXIT_FAILURE);
 		}
 		str++;
 	}
@@ -49,8 +49,8 @@ static void	is_duplicate(t_stack *s)
 		{
 			if (i != j && s->array[i] == s->array[j])
 			{
-				ft_printf("Error\n");
-				exit(1);
+				ft_putstr_fd("Error\n", STDERR_FILENO);
+				exit(EXIT_FAILURE);
 			}
 			j++;
 		}
@@ -92,8 +92,8 @@ void	build_stack(t_stack *s, char **argv)
 		nbr = ft_atol(*argv);
 		if (nbr > INT_MAX || nbr < INT_MIN)
 		{
-			ft_printf("Error\n");
-			exit(1);
+			ft_putstr_fd("Error\n", STDERR_FILENO);
+			exit(EXIT_FAILURE);
 		}
 		push_to_back(s, nbr);
 		argv++;
