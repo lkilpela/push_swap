@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 21:58:26 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/22 10:48:06 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/22 11:21:04 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	**prepare_argv(int argc, char **argv)
 		return (NULL);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_stack		a;
 	char		**argv_split;

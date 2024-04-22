@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 23:48:07 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/22 11:20:22 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/22 11:30:15 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	push_to_back(t_stack *s, int new_value)
 
 void	build_stack(t_stack *s, char **argv)
 {
-	long nbr;
+	long	nbr;
 
 	while (*argv)
 	{

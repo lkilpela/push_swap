@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 23:28:23 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/22 11:12:47 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/22 11:30:01 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,23 +29,21 @@ void	rotate_smallest_to_top(t_stack *a, t_stack *b)
 
 int	is_sorted(t_stack *s)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	//if (s->size < 2)
-		//return (1);
 	while (i < s->size - 1)
 	{
 		if (s->array[i] > s->array[i + 1])
 			return (0);
 		i++;
 	}
-	return (1);    
+	return (1);
 }
 
 void	sort(t_stack *a)
 {
-	t_stack b;
+	t_stack	b;
 
 	if (!is_sorted(a))
 	{

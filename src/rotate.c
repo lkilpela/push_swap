@@ -6,17 +6,17 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 22:32:18 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 22:57:52 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/22 11:29:11 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// rotate the elements of the stack s upwards
+// Rotate the elements of the stack s upwards.
 // s->array + 1: destination - copy starts from second element of the array.
 // s->array: source - copy starts from first element of the array.
 // len: size of the stack in bytes excluding the last element.
-// sets first element (s->array[0]) to nbr - value of the previously last element.
+// Set first element (s->array[0]) to nbr - value of previously last element.
 void	reverse_rotate(t_stack *s)
 {
 	int	nbr;
@@ -25,7 +25,7 @@ void	reverse_rotate(t_stack *s)
 	len = (s->size - 1) * sizeof(int);
 	if (s->size)
 	{
-		nbr = s->array[s->size - 1]; 
+		nbr = s->array[s->size - 1];
 		ft_memmove(s->array + 1, s->array, len);
 		s->array[0] = nbr;
 	}
@@ -39,7 +39,7 @@ void	rotate(t_stack *s)
 	len = (s->size - 1) * sizeof(int);
 	if (s->size)
 	{
-		nbr = s->array[0]; 
+		nbr = s->array[0];
 		ft_memmove(s->array, s->array + 1, len);
 		s->array[s->size - 1] = nbr;
 	}
@@ -52,12 +52,13 @@ static int	rotate_direction(t_stack *s, int index)
 	int	median;
 
 	median = s->size / 2;
-	if (index < median) // above median
+	if (index < median)
 		return (0);
 	return (1);
 }
 
-// rotates stack a: a certain number of times in the direction determined by the rotate_dir function
+// rotates stack a: a certain number of times in the direction 
+// determined by the rotate_direction function
 void	rotate_stack(char *name, t_stack *a, int index, int moves)
 {
 	int	j;
@@ -79,7 +80,8 @@ void	rotate_stack(char *name, t_stack *a, int index, int moves)
 	}
 }
 
-// rotates stack s until it's sorted in ascending order
+// Rotates stack s until it's sorted in ascending order
+//rotates the stack until the largest element is at the top
 void	rotate_to_sort_stack(char *name, t_stack *s)
 {
 	int	i;
@@ -87,7 +89,6 @@ void	rotate_to_sort_stack(char *name, t_stack *s)
 	if (s->size > 1)
 	{
 		i = find_biggest(s);
-		//rotates the stack until the largest element is at the top
 		rotate_stack(name, s, i, calculate_min_rotations(s, i));
 	}
 }
