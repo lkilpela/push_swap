@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 21:58:26 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/22 11:21:04 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/22 11:58:07 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ char	**prepare_argv(int argc, char **argv)
 	argv_split = NULL;
 	if (argc == 2 && !argv[1][0])
 	{
-		ft_printf("Error\n");
-		exit(1);
+		ft_putstr_fd("Error\n", STDERR_FILENO);
+		exit(EXIT_FAILURE);
 	}
 	if (argc == 2)
 	{
