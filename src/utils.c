@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 22:05:49 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 18:44:29 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/22 12:13:00 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	init_stack(t_stack *s)
 {
 	s->capacity = 500;
 	s->array = malloc(sizeof(int) * s->capacity);
+	if (!s->array)
+		exit(1);
 	s->size = 0;
 }
 
@@ -42,7 +44,7 @@ void	increase_capacity(t_stack *s)
 {
 	int	*str;
 
-	str = malloc(sizeof(int) * s->capacity);
+	str = malloc(sizeof(int) * (s->capacity * 2));
 	if (!str)
 		exit(1);
 	ft_memcpy(str, s->array, sizeof(int) * s->capacity);

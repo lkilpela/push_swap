@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 16:20:49 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/22 11:25:28 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/22 12:10:35 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,8 @@ void	do_optimal_push(t_stack *a, t_stack *b)
 
 	i = 0;
 	moves = malloc(a->size * sizeof(int));
+	if (moves == NULL)
+		exit(1);
 	while (i != a->size)
 	{
 		moves[i] = calculate_ops(a, i, b);
