@@ -1,5 +1,5 @@
 NAME = push_swap
-CCFLAGS = -Wall -Wextra -Werror -g -fsanitize=address
+CCFLAGS = -Wall -Wextra -Werror
 
 LIBFT = lib/libft
 
@@ -21,7 +21,7 @@ libft:
 
 $(NAME): $(OBJS)
 	@echo "--------------------------------------------"
-	@$(CC) $(OBJS) $(LIBS) $(HDRS) -o $(NAME) -fsanitize=address
+	@$(CC) $(OBJS) $(LIBS) $(HDRS) -o $(NAME)
 	@echo "[$(NAME)] $(BLUE)Built target push_swap$(RESET)"
 	@echo "--------------------------------------------"
 
