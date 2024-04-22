@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 14:57:48 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/02/02 12:09:33 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/22 11:53:49 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 int		ft_atoi(const char *str);
-long	ft_atol(const char *str);
+long	ft_atol(const char *str, int *overflow);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isascii(int c);

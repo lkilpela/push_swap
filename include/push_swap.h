@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 22:58:45 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/22 11:13:06 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/22 11:51:15 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,9 @@
 
 # include "../lib/libft/include/libft.h"
 
-# include <stdbool.h>
-# include <limits.h> // INT_MIN, INT_MAX
+# include <limits.h> // INT_MIN, INT_MAX, LONG_MIN, LONG_MAX
 # include <unistd.h> // read, write
 # include <stdlib.h> // malloc, free, exit
-# include <stdio.h>
 
 typedef struct s_stack
 {

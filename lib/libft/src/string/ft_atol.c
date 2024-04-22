@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 21:08:24 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/21 20:00:45 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/22 11:49:46 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	ft_is_overflow(long result, long sign, long digit)
 	return (0);
 }
 
-long	ft_atol(const char *str)
+long	ft_atol(const char *str, int *overflow)
 {
 	long	result;
 	long	sign;
@@ -39,6 +39,7 @@ long	ft_atol(const char *str)
 		digit = *str - '0';
 		if (ft_is_overflow(result, sign, digit))
 		{
+			*overflow = 1;
 			return (0);
 		}
 		result = (result * 10) + (digit * sign);
