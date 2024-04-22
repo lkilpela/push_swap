@@ -6,7 +6,7 @@
 /*   By: lkilpela <lkilpela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 23:35:42 by lkilpela          #+#    #+#             */
-/*   Updated: 2024/04/22 11:01:32 by lkilpela         ###   ########.fr       */
+/*   Updated: 2024/04/22 11:02:06 by lkilpela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,28 +25,28 @@ static void	print_rotate(t_stack *s)
 
 void	sort_three(t_stack *a)
 {
-	int a = s->array[0];
-	int b = s->array[1];
-	int c = s->array[2];
+	int a = a->array[0];
+	int b = a->array[1];
+	int c = a->array[2];
 
 	if (a > b && a < c)
-		swap(s);
+		swap(a);
 	else if (a > b && b > c)
 	{
-		swap(s);
-		reverse_rotate(s);
+		swap(a);
+		reverse_rotate(a);
 		ft_printf("rra\n");
 	}
 	else if (a > b && b < c)   
-		print_rotate(s);
+		print_rotate(a);
 	else if (a < b && b > c && a < c)
 	{
-		swap(s);
-		print_rotate(s);
+		swap(a);
+		print_rotate(a);
 	}
 	else if (a < b && a > c)
 	{
-		reverse_rotate(s);
+		reverse_rotate(a);
 		ft_printf("rra\n");
 	}
 }
