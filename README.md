@@ -1,5 +1,5 @@
 <h1 align="center">
-	PUSH_SWAP
+	<img src="https://github.com/lkilpela/42-project-badges/blob/main/badges/push_swape.png" />
 </h1>
 
 <p align="center">
@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-    <img alt="score" src="https://img.shields.io/badge/score-0%2F100-brightgreen" />
+    <img alt="score" src="https://img.shields.io/badge/score-97%2F100-brightgreen" />
 <p align="center">
     <img alt="solo" src="https://img.shields.io/badge/solo-yellow" />
     <img alt="estimated time" src="https://img.shields.io/badge/estimation-60%20hours-blue" />
@@ -96,11 +96,11 @@ The `push_swap` project was evaluated based on the following criteria:
 
 Here are some of the comments received during the peer evaluation of the `pipex` project:
 
-> **Peer 1**: "..."
+> **Peer 1**: "Very good work, code is well documented and relatively easy to understand. Everything works well with no leaks. Congrats!"
 
-> **Peer 2**: "..."
+> **Peer 2**: "very nice project, a lot simpler than mine, wish I had come up with something as clean and simple, everything worked as intended and good luck."
 
-> **Peer 3**: "..."
+> **Peer 3**: "This was an interesting perspective using arrays, it was clean looking code and also well organised directories, although perhaps a few less directories would be better ..maybe?. The explanation was clear and thorough, no leaks all outliers i could think of acted as they where supposed to! well done great job, thankyou for the pleasant company !"
 
 ## 📜 License
 
