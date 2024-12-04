@@ -58,3 +58,7 @@ dkms.conf
 README.md
 
 push_swap
+
+.vscode/
+
+.DS_Store
